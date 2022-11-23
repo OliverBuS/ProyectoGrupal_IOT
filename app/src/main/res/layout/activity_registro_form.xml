@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".RegistroFormActivity"
+    android:gravity="center_horizontal"
+    >
+    <LinearLayout
+        android:layout_marginTop="30dp"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical">
+        <ImageView
+            android:id="@+id/arrowBack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/back_arrow"
+            android:layout_marginRight="8dp"
+            />
+        <TextView
+            android:drawablePadding="8dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:text="Formulario de registro"
+            android:textColor="@color/black"
+            />
+    </LinearLayout>
+
+    <TextView
+        android:labelFor="@id/edCodigo"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:text="Código"
+        android:textColor="@color/black"
+        android:layout_marginTop="16dp"
+        android:textSize="19sp"/>
+    <EditText
+        android:id="@+id/edCodigo"
+        android:layout_marginTop="4dp"
+        android:layout_width="300dp"
+        android:layout_height="48dp"
+        android:background="@drawable/background_gray_rounded"/>
+
+    <TextView
+        android:labelFor="@id/edCorreo"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:text="Correo"
+        android:textColor="@color/black"
+        android:layout_marginTop="8dp"
+        android:textSize="19sp"/>
+    <EditText
+        android:id="@+id/edCorreo"
+        android:layout_marginTop="4dp"
+        android:layout_width="300dp"
+        android:layout_height="48dp"
+        android:background="@drawable/background_gray_rounded"/>
+
+    <TextView
+        android:labelFor="@id/raRol"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:text="Rol"
+        android:textColor="@color/black"
+        android:layout_marginTop="8dp"
+        android:textSize="19sp"/>
+    <RadioGroup
+        android:id="@+id/raRol"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:gravity="start">
+
+        <androidx.appcompat.widget.AppCompatRadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Alumno" />
+        <androidx.appcompat.widget.AppCompatRadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Profesor" />
+        <androidx.appcompat.widget.AppCompatRadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Administrativo" />
+    </RadioGroup>
+
+    <TextView
+        android:labelFor="@id/edPassword1"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:text="Contraseña"
+        android:textColor="@color/black"
+        android:layout_marginTop="8dp"
+        android:textSize="19sp"/>
+    <EditText
+        android:id="@+id/edPassword1"
+        android:layout_marginTop="4dp"
+        android:layout_width="300dp"
+        android:layout_height="48dp"
+        android:background="@drawable/background_gray_rounded"/>
+
+    <TextView
+        android:labelFor="@id/edPassword2"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:text="Confirmar contraseña"
+        android:textColor="@color/black"
+        android:layout_marginTop="8dp"
+        android:textSize="19sp"/>
+    <EditText
+        android:id="@+id/edPassword2"
+        android:layout_marginTop="4dp"
+        android:layout_width="300dp"
+        android:layout_height="48dp"
+        android:background="@drawable/background_gray_rounded"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/buContinuar"
+        android:layout_width="310dp"
+        android:layout_height="56dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/background_red_rounded"
+        android:text="Continuar"
+        android:textColor="@color/white"
+        android:textStyle="bold"/>
+
+
+</LinearLayout>
