@@ -1,5 +1,35 @@
 
+†
+Vapp/src/main/java/com/example/proyectogrupal_iot/cliente/ClienteHistorialFragment.java,8\2\82d2414463233fa3c90bb9b797ad5bf4866db83c
+ˆ
+Xapp/src/main/java/com/example/proyectogrupal_iot/cliente/ClienteSolicitudesFragment.java,f\4\f48ec768547151fb5e04f744ec1acb291840edb7
+}
+Mapp/src/main/java/com/example/proyectogrupal_iot/RecuperarCambioActivity.java,b\b\bb1f4ade060aeffa1f4a2183cc9b8a99fffdfe93
+}
+Mapp/src/main/java/com/example/proyectogrupal_iot/RecuperarCodigoActivity.java,0\1\01aac9e1b2bf53de5959d414a63dcbcb24cee0f2
+}
+Mapp/src/main/java/com/example/proyectogrupal_iot/RecuperarCorreoActivity.java,9\8\989ab3346a1b4a9451f8f4ad1866e7ea73b13091
+|
+Lapp/src/main/java/com/example/proyectogrupal_iot/RegistroCodigoActivity.java,3\2\32d3fa59e0605690c1b5a4639d1644a357e7321a
+z
+Japp/src/main/java/com/example/proyectogrupal_iot/RegistroFormActivity.java,8\0\80e4377ec40127f0273bf5ea81b2b22504d8dea8
+u
+Eapp/src/main/java/com/example/proyectogrupal_iot/entities/Equipo.java,3\7\3786342b8d0d243603c12a53c7f26de8b7d32a27
+H
+app/google-services.json,f\d\fd8d34b142d02ec743a8efefefd2c097961666e9
+P
+ app/src/main/AndroidManifest.xml,8\c\8c55c3ccc257e5907959013f99656e4c8ec3903e
 r
 Bapp/src/main/java/com/example/proyectogrupal_iot/MainActivity.java,0\a\0a706df31670955d0f5ba4d7a720fc378ac0592b
+?
+settings.gradle,0\5\05efc8b1657769a27696d478ded1e95f38737233
 <
 build.gradle,f\0\f07866736216be0ee2aba49e392191aeae700a35
+@
+app/build.gradle,f\4\f4a01d6a4fcb971362ec00a83903fd3902f52164
+y
+Iapp/src/main/java/com/example/proyectogrupal_iot/ClienteMainActivity.java,d\9\d9682f98e7a66b52b9da13e53563f17344608632
+„
+Tapp/src/main/java/com/example/proyectogrupal_iot/cliente/ClienteEquiposFragment.java,6\d\6d5efb55ad5c66af8524088b8fd47e1e5a68c82b
+|
+Lapp/src/main/java/com/example/proyectogrupal_iot/adapter/EquiposAdapter.java,2\f\2f3ca8773a908b1513a40e62475a3b98fb208457

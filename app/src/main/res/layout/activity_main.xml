@@ -3,7 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:background="@color/white">
 
     <TextView
         android:id="@+id/title"
@@ -11,7 +12,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="40dp"
         android:text="Como usar la aplicación"
         android:textColor="@color/black"
         android:textSize="28sp"
@@ -102,7 +103,7 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="430dp"
+        android:layout_height="450dp"
         android:layout_alignParentBottom="true"
         android:background="@drawable/background_blue_toprounded"
         android:gravity="center_horizontal"
@@ -126,7 +127,8 @@
             android:textSize="20dp"
             android:textStyle="bold" />
 
-        <EditText
+        <androidx.appcompat.widget.AppCompatEditText
+            android:inputType="textEmailAddress"
             android:id="@+id/edCorreo"
             android:layout_width="300dp"
             android:layout_height="52dp"
@@ -134,7 +136,8 @@
             android:background="@drawable/background_white_rounded"
             android:hint="Correo"
             android:paddingStart="8dp"
-            android:textColorHint="@color/black" />
+            android:textColorHint="@color/black"
+            android:textColor="@color/black"/>
 
         <TextView
             android:layout_width="300dp"
@@ -146,7 +149,7 @@
             android:textSize="20dp"
             android:textStyle="bold" />
 
-        <EditText
+        <androidx.appcompat.widget.AppCompatEditText
             android:id="@+id/edPassword"
             android:layout_width="300dp"
             android:layout_height="52dp"
@@ -155,7 +158,8 @@
             android:hint="Contraseña"
             android:inputType="textPassword"
             android:paddingStart="8dp"
-            android:textColorHint="@color/black" />
+            android:textColorHint="@color/black"
+            android:textColor="@color/black"/>
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -182,7 +186,7 @@
         </LinearLayout>
 
         <androidx.appcompat.widget.AppCompatButton
-            android:id="login"
+            android:id="@+id/login"
             android:layout_marginTop="16dp"
             android:layout_width="300dp"
             android:layout_height="wrap_content"

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/elementView"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:animateLayoutChanges="true"
+    app:cardCornerRadius="20dp"
+    android:background="@color/light_blue"
+    app:cardElevation="2dp"
+    app:cardUseCompatPadding="true"
+    android:backgroundTint="@color/light_blue">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingVertical="8dp"
+        android:paddingHorizontal="8dp">
+        <androidx.cardview.widget.CardView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="10dp"
+            >
+            <ImageView
+                android:id="@+id/imEquipo"
+                android:layout_width="88dp"
+                android:layout_height="72dp"
+                android:src="@color/blue"/>
+        </androidx.cardview.widget.CardView>
+
+        <RelativeLayout
+            android:paddingHorizontal="8dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/textTipo"
+                android:text="Tipo"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:textSize="15sp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentStart="true"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/textMarca"
+                android:text="Marca"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:layout_toRightOf="@id/textTipo"
+                android:layout_alignParentTop="true"
+                android:gravity="end"/>
+            <TextView
+                android:id="@+id/textDesc"
+                android:layout_marginTop="6dp"
+                android:textSize="12sp"
+                android:textColor="@color/black"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@id/textTipo"
+                android:text="MacBookAir. Pantalla de 13.3 pulgadas, procesador chip M1 y 16GB de RAM"/>
+
+
+
+        </RelativeLayout>
+    </LinearLayout>
+    
+
+
+</androidx.cardview.widget.CardView>

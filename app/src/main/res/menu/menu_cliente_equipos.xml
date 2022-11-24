@@ -1,13 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
+
     <item
-        android:id="@+id/filtroDispositivo"
-        android:title="Dispositivo"
-        app:showAsAction="never"/>
-    <item
-        android:id="@+id/filtroMarca"
-        android:title="Marca"
-        app:showAsAction="never"/>
+        android:icon="@drawable/ic_baseline_monitor_32"
+        app:showAsAction="ifRoom">
+        <menu>
+            <item
+                android:id="@+id/filtroDispositivo"
+                android:title="Dispositivo"
+                android:orderInCategory="1"
+                app:showAsAction="never" />
+            <item
+                android:id="@+id/filtroMarca"
+                android:title="Marca"
+                android:orderInCategory="2"
+                app:showAsAction="never" />
+        </menu>
+
+    </item>
+
 
 </menu>

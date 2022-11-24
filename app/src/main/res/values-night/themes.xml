@@ -1,6 +1,6 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Theme.ProyectoGrupal_IOT" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+    <style name="Theme.ProyectoGrupal_IOT" parent="Theme.Material3.Dark">
         <item name="colorPrimary">@color/md_theme_dark_primary</item>
         <item name="colorOnPrimary">@color/md_theme_dark_onPrimary</item>
         <item name="colorPrimaryContainer">@color/md_theme_dark_primaryContainer</item>
@@ -19,7 +19,7 @@
         <item name="colorOnErrorContainer">@color/md_theme_dark_onErrorContainer</item>
         <item name="android:colorBackground">@color/md_theme_dark_background</item>
         <item name="colorOnBackground">@color/md_theme_dark_onBackground</item>
-        <item name="colorSurface">@color/md_theme_dark_surface</item>
+        <item name="colorSurface">@color/blue</item>
         <item name="colorOnSurface">@color/md_theme_dark_onSurface</item>
         <item name="colorSurfaceVariant">@color/md_theme_dark_surfaceVariant</item>
         <item name="colorOnSurfaceVariant">@color/md_theme_dark_onSurfaceVariant</item>
@@ -28,7 +28,9 @@
         <item name="colorSurfaceInverse">@color/md_theme_dark_inverseSurface</item>
         <item name="colorPrimaryInverse">@color/md_theme_dark_inversePrimary</item>
 
-        <item name="android:actionOverflowButtonStyle">@drawable/ic_baseline_monitor_32</item>
-        <item name="android:src">@drawable/ic_baseline_monitor_32</item>
+        <item name="android:windowBackground">@color/white</item>
     </style>
+
+
+
 </resources>

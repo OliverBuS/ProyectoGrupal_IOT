@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".cliente.ClienteMainActivity">
+    tools:context=".ClienteMainActivity">
 
     <FrameLayout
         android:id="@+id/frame"
@@ -19,8 +19,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:menu="@menu/menu_cliente"
-        android:theme="@style/Theme.Material3.Dark"
-        android:background="@color/blue"
-        app:itemIconTint="@drawable/cliente_item_nav"/>
+        app:itemTextColor="@color/white"
+        app:itemIconTint="@color/white"
+        android:background="@color/blue" />
 
 </RelativeLayout>
