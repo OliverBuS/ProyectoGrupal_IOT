@@ -10,8 +10,11 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
 import com.example.proyectogrupal_iot.R;
 import com.example.proyectogrupal_iot.entities.Equipo;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
 
 import java.util.List;
 
@@ -52,6 +55,8 @@ public class EquiposAdapter extends RecyclerView.Adapter<EquiposAdapter.EquipoVi
         marca.setText(equipo.getMarca());
         desc.setText(equipo.getCaracteristicas());
 
+        StorageReference imageRef = FirebaseStorage.getInstance().getReference().child("equipos/"+equipo.getImagenPrincipal());
+        Glide.with(context).load(imageRef).into(imagen);
 
     }
 

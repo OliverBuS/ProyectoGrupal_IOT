@@ -19,6 +19,7 @@ import com.example.proyectogrupal_iot.R;
 import com.example.proyectogrupal_iot.adapter.EquiposAdapter;
 import com.example.proyectogrupal_iot.databinding.FragmentClienteEquiposBinding;
 import com.example.proyectogrupal_iot.entities.Equipo;
+import com.example.proyectogrupal_iot.save.ClienteSession;
 import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -42,10 +43,9 @@ public class ClienteEquiposFragment extends Fragment {
 
     FragmentClienteEquiposBinding binding;
 
-    List<Equipo> equipoList = new ArrayList<>();
+    List<Equipo> equipoList = ClienteSession.getEquipos();
     RecyclerView recyclerView;
 
-    
 
     private boolean notCreated = true;
 
@@ -57,8 +57,8 @@ public class ClienteEquiposFragment extends Fragment {
 
         if(savedInstanceState !=null){
             EquiposAdapter equiposAdapter = new EquiposAdapter(equipoList,super.getContext());
-            binding.recycleViewer.setAdapter(equiposAdapter);
-            binding.recycleViewer.setLayoutManager(new LinearLayoutManager(super.getContext()));
+            //binding.recycleViewer.setAdapter(equiposAdapter);
+           //binding.recycleViewer.setLayoutManager(new LinearLayoutManager(super.getContext()));
         }
 
     }
@@ -86,6 +86,8 @@ public class ClienteEquiposFragment extends Fragment {
                         Equipo equipo = children.getValue(Equipo.class);
                         equipoList.add(equipo);
                     }
+                    Toast.makeText(context, String.valueOf(equipoList.size()), Toast.LENGTH_SHORT).show();
+
                     equiposAdapter.setEquipos(equipoList);
                     recyclerView.setAdapter(equiposAdapter);
                     recyclerView.setLayoutManager(new LinearLayoutManager(context));

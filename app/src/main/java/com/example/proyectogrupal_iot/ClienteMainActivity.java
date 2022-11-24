@@ -2,6 +2,7 @@ package com.example.proyectogrupal_iot;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentController;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
@@ -24,7 +25,7 @@ public class ClienteMainActivity extends AppCompatActivity {
     FirebaseDatabase firebaseDatabase;
     DatabaseReference reference;
 
-    Fragment equiposFragment, solicitudesFragment,historialFragment;
+    Fragment equiposFragment, solicitudesFragment, historialFragment;
 
 
     @Override
@@ -34,19 +35,17 @@ public class ClienteMainActivity extends AppCompatActivity {
         setContentView(binding.getRoot());
 
 
-
         equiposFragment = new ClienteEquiposFragment();
         replaceFragment(equiposFragment);
         solicitudesFragment = new ClienteSolicitudesFragment();
         historialFragment = new ClienteHistorialFragment();
 
 
-
         binding.bottomNav.setOnItemSelectedListener(item -> {
             switch (item.getItemId()) {
                 case R.id.equipos:
                     replaceFragment(equiposFragment);
-                    break;  
+                    break;
                 case R.id.solicitudes:
                     replaceFragment(solicitudesFragment);
                     break;
@@ -59,11 +58,13 @@ public class ClienteMainActivity extends AppCompatActivity {
         });
     }
 
-    private void replaceFragment(Fragment fragment){
+    private void replaceFragment(Fragment fragment) {
+
         FragmentManager fragmentManager = getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-        fragmentTransaction.replace(R.id.frame,fragment);
+        fragmentTransaction.replace(R.id.frame, fragment);
         fragmentTransaction.commit();
+
     }
 
 

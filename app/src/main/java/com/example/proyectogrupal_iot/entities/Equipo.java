@@ -9,6 +9,8 @@ public class Equipo {
     String incluye;
     List<String> imagenes;
 
+
+
     public Equipo() {
     }
 
@@ -54,6 +56,10 @@ public class Equipo {
 
     public void setImagenes(List<String> imagenes) {
         this.imagenes = imagenes;
+    }
+
+    public List<String> getImagenes() {
+        return imagenes;
     }
 
     public String getImagenPrincipal(){
