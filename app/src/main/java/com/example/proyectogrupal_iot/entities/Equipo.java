@@ -4,11 +4,14 @@ import java.io.Serializable;
 import java.util.List;
 
 public class Equipo implements Serializable {
-    String dispositivo;
-    String marca;
-    String caracteristicas;
-    String incluye;
-    List<String> imagenes;
+
+
+    private String key;
+    private String dispositivo;
+    private String marca;
+    private String caracteristicas;
+    private String incluye;
+    private List<String> imagenes;
 
 
 
@@ -21,6 +24,14 @@ public class Equipo implements Serializable {
         this.caracteristicas = caracteristicas;
         this.incluye = incluye;
         this.imagenes = imagenes;
+    }
+
+    public String getKey() {
+        return key;
+    }
+
+    public void setKey(String key) {
+        this.key = key;
     }
 
     public String getDispositivo() {

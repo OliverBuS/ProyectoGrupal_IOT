@@ -32,16 +32,10 @@ import java.util.List;
 
 public class ClienteEquiposFragment extends Fragment implements RecycleviewerInterface {
 
-
-
-
-
     FirebaseDatabase firebaseDatabase;
     DatabaseReference reference;
     FragmentClienteEquiposBinding binding;
     RecyclerView recyclerView;
-
-
 
     private boolean notCreated = true;
 
@@ -81,6 +75,9 @@ public class ClienteEquiposFragment extends Fragment implements RecycleviewerInt
                     List<Equipo> equipoList = new ArrayList<>();
                     for (DataSnapshot children : snapshot.getChildren()) {
                         Equipo equipo = children.getValue(Equipo.class);
+                        if(equipo!=null) {
+                            equipo.setKey(children.getKey());
+                        }
                         equipoList.add(equipo);
                     }
                     ClienteSession.setEquipos(equipoList);

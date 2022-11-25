@@ -16,6 +16,7 @@ import com.example.proyectogrupal_iot.cliente.ClienteEquiposFragment;
 import com.example.proyectogrupal_iot.cliente.ClienteHistorialFragment;
 import com.example.proyectogrupal_iot.cliente.ClienteSolicitudesFragment;
 import com.example.proyectogrupal_iot.databinding.*;
+import com.example.proyectogrupal_iot.save.Session;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -37,6 +38,7 @@ public class ClienteMainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         binding = ActivityClienteMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+        Toast.makeText(this,Session.rol, Toast.LENGTH_SHORT).show();
 
         if (equiposFragment == null) {
             equiposFragment = new ClienteEquiposFragment();
@@ -49,6 +51,8 @@ public class ClienteMainActivity extends AppCompatActivity {
                 break;
             case 1:
                 replaceFragment(solicitudesFragment);
+                Toast.makeText(this, Session.codigo+" "+Session.rol, Toast.LENGTH_SHORT).show();
+
                 break;
             case 2:
                 replaceFragment(historialFragment);
@@ -117,5 +121,13 @@ public class ClienteMainActivity extends AppCompatActivity {
                 return true;
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    protected void onDestroy() {
+        equiposFragment=null;
+        solicitudesFragment=null;
+        historialFragment=null;
+        super.onDestroy();
     }
 }
