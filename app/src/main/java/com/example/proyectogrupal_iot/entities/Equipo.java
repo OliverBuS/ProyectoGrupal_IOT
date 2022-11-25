@@ -1,8 +1,9 @@
 package com.example.proyectogrupal_iot.entities;
 
+import java.io.Serializable;
 import java.util.List;
 
-public class Equipo {
+public class Equipo implements Serializable {
     String dispositivo;
     String marca;
     String caracteristicas;

@@ -3,6 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <item
+        android:id="@+id/filtro"
         android:icon="@drawable/ic_baseline_monitor_32"
         app:showAsAction="ifRoom">
         <menu>

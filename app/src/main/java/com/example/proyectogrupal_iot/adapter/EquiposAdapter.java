@@ -13,6 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.bumptech.glide.Glide;
 import com.example.proyectogrupal_iot.R;
 import com.example.proyectogrupal_iot.entities.Equipo;
+import com.example.proyectogrupal_iot.interfaces.EquiposRecycleviewerInterface;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 
@@ -22,6 +23,8 @@ public class EquiposAdapter extends RecyclerView.Adapter<EquiposAdapter.EquipoVi
     private List<Equipo> equipos;
     private LayoutInflater inflater;
     private Context context;
+    private final EquiposRecycleviewerInterface equiposRecycleviewerInterface;
+
 
 
     @Override
@@ -50,7 +53,6 @@ public class EquiposAdapter extends RecyclerView.Adapter<EquiposAdapter.EquipoVi
         marca = holder.itemView.findViewById(R.id.textMarca);
         desc = holder.itemView.findViewById(R.id.textDesc);
 
-
         disp.setText(equipo.getDispositivo());
         marca.setText(equipo.getMarca());
         desc.setText(equipo.getCaracteristicas());
@@ -58,13 +60,15 @@ public class EquiposAdapter extends RecyclerView.Adapter<EquiposAdapter.EquipoVi
         StorageReference imageRef = FirebaseStorage.getInstance().getReference().child("equipos/"+equipo.getImagenPrincipal());
         Glide.with(context).load(imageRef).into(imagen);
 
+
     }
 
 
-    public EquiposAdapter(List<Equipo> itemList, Context context) {
+    public EquiposAdapter(List<Equipo> itemList, Context context, EquiposRecycleviewerInterface equiposRecycleviewerInterface) {
         this.equipos = itemList;
         this.context = context;
         this.inflater = LayoutInflater.from(context);
+        this.equiposRecycleviewerInterface = equiposRecycleviewerInterface;
     }
 
 
@@ -76,7 +80,17 @@ public class EquiposAdapter extends RecyclerView.Adapter<EquiposAdapter.EquipoVi
         Equipo equipo;
 
         public EquipoViewHolder(@NonNull View view) {
+
             super(view);
+
+            view.setOnClickListener(v->{
+                if(equiposRecycleviewerInterface!=null){
+                    int pos = getAdapterPosition();
+                    if(pos != RecyclerView.NO_POSITION){
+                        equiposRecycleviewerInterface.onItemClick(pos);
+                    }
+                }
+            });
         }
 
     }
