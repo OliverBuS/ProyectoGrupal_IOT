@@ -134,13 +134,14 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:background="@drawable/background_gray_rounded"
+                android:scaleType="fitXY"
                 />
             <ImageView
                 android:id="@+id/subirIcon"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:src="@drawable/ic_baseline_upload_24"
-                android:layout_margin="40dp"/>
+                android:layout_margin="40dp" />
             <TextView
                 android:id="@+id/subirTexto"
                 android:paddingTop="70dp"

@@ -1,16 +1,27 @@
 package com.example.proyectogrupal_iot.entities;
 
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Locale;
+
 public class Solicitud {
 
     String key;
+    String equipo;
     String motivo;
     String curso;
     int tiempo;
     String programas;
     String imagen;
+    String dni;
     String otros="";
+    String tipo;
+    SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy", Locale.getDefault());
+    String fecha;
+
 
     public Solicitud() {
+        this.fecha = dateFormat.format(Calendar.getInstance().getTime());
     }
 
     public Solicitud(String motivo, String curso, int tiempo, String programas) {
@@ -18,6 +29,35 @@ public class Solicitud {
         this.curso = curso;
         this.tiempo = tiempo;
         this.programas = programas;
+        this.fecha = dateFormat.format(Calendar.getInstance().getTime());
+    }
+
+    public String getFecha() {
+        return fecha;
+    }
+
+    public String getTipo() {
+        return tipo;
+    }
+
+    public void setTipo(String tipo) {
+        this.tipo = tipo;
+    }
+
+    public String getEquipo() {
+        return equipo;
+    }
+
+    public void setEquipo(String equipo) {
+        this.equipo = equipo;
+    }
+
+    public String getDni() {
+        return dni;
+    }
+
+    public void setDni(String dni) {
+        this.dni = dni;
     }
 
     public String getKey() {

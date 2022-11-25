@@ -42,16 +42,7 @@ public class ClienteEquiposFragment extends Fragment implements RecycleviewerInt
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         binding = FragmentClienteEquiposBinding.inflate(getLayoutInflater());
-
-        /*
-        if(savedInstanceState !=null){
-            EquiposAdapter equiposAdapter = new EquiposAdapter(equipoList,super.getContext());
-            binding.recycleViewer.setAdapter(equiposAdapter);
-           binding.recycleViewer.setLayoutManager(new LinearLayoutManager(super.getContext()));
-        }
-         */
 
     }
 
@@ -69,7 +60,7 @@ public class ClienteEquiposFragment extends Fragment implements RecycleviewerInt
 
         if(notCreated) {
             notCreated=false;
-            reference.addValueEventListener(new ValueEventListener() {
+            reference.orderByChild("stock").startAt(1).addValueEventListener(new ValueEventListener() {
                 @Override
                 public void onDataChange(@NonNull DataSnapshot snapshot) {
                     List<Equipo> equipoList = new ArrayList<>();
@@ -81,9 +72,11 @@ public class ClienteEquiposFragment extends Fragment implements RecycleviewerInt
                         equipoList.add(equipo);
                     }
                     ClienteSession.setEquipos(equipoList);
-                    equiposAdapter.setEquipos(ClienteSession.getEquipos());
-                    recyclerView.setAdapter(equiposAdapter);
-                    recyclerView.setLayoutManager(new LinearLayoutManager(context));
+                    if(!ClienteSession.checkfiltro()) {
+                        equiposAdapter.setEquipos(ClienteSession.getEquipos());
+                        recyclerView.setAdapter(equiposAdapter);
+                        recyclerView.setLayoutManager(new LinearLayoutManager(context));
+                    }
                 }
 
                 @Override

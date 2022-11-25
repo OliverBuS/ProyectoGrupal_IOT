@@ -22,7 +22,6 @@ import com.google.firebase.database.FirebaseDatabase;
 
 public class ClienteMainActivity extends AppCompatActivity {
 
-
     ActivityClienteMainBinding binding;
     FirebaseDatabase firebaseDatabase;
     DatabaseReference reference;
@@ -38,7 +37,6 @@ public class ClienteMainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         binding = ActivityClienteMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
-        Toast.makeText(this,Session.rol, Toast.LENGTH_SHORT).show();
 
         if (equiposFragment == null) {
             equiposFragment = new ClienteEquiposFragment();
@@ -51,8 +49,6 @@ public class ClienteMainActivity extends AppCompatActivity {
                 break;
             case 1:
                 replaceFragment(solicitudesFragment);
-                Toast.makeText(this, Session.codigo+" "+Session.rol, Toast.LENGTH_SHORT).show();
-
                 break;
             case 2:
                 replaceFragment(historialFragment);

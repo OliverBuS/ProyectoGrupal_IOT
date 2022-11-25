@@ -10,6 +10,7 @@ import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.CompoundButton;
 import android.widget.Toast;
@@ -149,10 +150,12 @@ public class ClienteFormSolicitudActivity extends AppCompatActivity {
         }
         Toast.makeText(this, "Se Envía", Toast.LENGTH_SHORT).show();
 
-
-
-
     }
 
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        finish();
+        return true;
+    }
 }
 

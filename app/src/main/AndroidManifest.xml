@@ -40,7 +40,7 @@
             android:parentActivityName=".ClienteMainActivity">
             <meta-data
                 android:name="android.app.lib_name"
-                android:value="android.support.PARENT_ACTIVITY" />
+                android:value="" />
         </activity>
         <activity
             android:name=".ClienteMainActivity"

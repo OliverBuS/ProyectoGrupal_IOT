@@ -25,7 +25,7 @@ import java.util.List;
 
 public class ClienteEquipoActivity extends AppCompatActivity {
 
-    private Equipo equipo;
+    Equipo equipo;
 
     ActivityClienteEquipoBinding binding;
     FirebaseStorage firebaseStorage;
@@ -45,6 +45,7 @@ public class ClienteEquipoActivity extends AppCompatActivity {
         reference = firebaseStorage.getReference("equipos");
 
         equipo = (Equipo) getIntent().getSerializableExtra("equipo");
+
         List<SlideModel> slideModels = new ArrayList<>();
 
         obsInt.set(slideModels.size());

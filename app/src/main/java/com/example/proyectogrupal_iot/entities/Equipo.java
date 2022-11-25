@@ -12,6 +12,8 @@ public class Equipo implements Serializable {
     private String caracteristicas;
     private String incluye;
     private List<String> imagenes;
+    private int stock;
+    private String marcaOtro;
 
 
 
@@ -24,6 +26,14 @@ public class Equipo implements Serializable {
         this.caracteristicas = caracteristicas;
         this.incluye = incluye;
         this.imagenes = imagenes;
+    }
+
+    public int getStock() {
+        return stock;
+    }
+
+    public void setStock(int stock) {
+        this.stock = stock;
     }
 
     public String getKey() {
@@ -82,4 +92,11 @@ public class Equipo implements Serializable {
         return  imagenes.subList(1,0);
     }
 
+    public String getMarcaOtro() {
+        return marcaOtro;
+    }
+
+    public void setMarcaOtro(String marcaOtro) {
+        this.marcaOtro = marcaOtro;
+    }
 }
