@@ -1,5 +1,5 @@
 package com.example.proyectogrupal_iot.interfaces;
 
-public interface EquiposRecycleviewerInterface {
+public interface RecycleviewerInterface {
     void onItemClick(int position);
 }

@@ -13,7 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.bumptech.glide.Glide;
 import com.example.proyectogrupal_iot.R;
 import com.example.proyectogrupal_iot.entities.Equipo;
-import com.example.proyectogrupal_iot.interfaces.EquiposRecycleviewerInterface;
+import com.example.proyectogrupal_iot.interfaces.RecycleviewerInterface;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 
@@ -23,7 +23,7 @@ public class EquiposAdapter extends RecyclerView.Adapter<EquiposAdapter.EquipoVi
     private List<Equipo> equipos;
     private LayoutInflater inflater;
     private Context context;
-    private final EquiposRecycleviewerInterface equiposRecycleviewerInterface;
+    private final RecycleviewerInterface recycleviewerInterface;
 
 
 
@@ -64,11 +64,11 @@ public class EquiposAdapter extends RecyclerView.Adapter<EquiposAdapter.EquipoVi
     }
 
 
-    public EquiposAdapter(List<Equipo> itemList, Context context, EquiposRecycleviewerInterface equiposRecycleviewerInterface) {
+    public EquiposAdapter(List<Equipo> itemList, Context context, RecycleviewerInterface recycleviewerInterface) {
         this.equipos = itemList;
         this.context = context;
         this.inflater = LayoutInflater.from(context);
-        this.equiposRecycleviewerInterface = equiposRecycleviewerInterface;
+        this.recycleviewerInterface = recycleviewerInterface;
     }
 
 
@@ -84,10 +84,10 @@ public class EquiposAdapter extends RecyclerView.Adapter<EquiposAdapter.EquipoVi
             super(view);
 
             view.setOnClickListener(v->{
-                if(equiposRecycleviewerInterface!=null){
+                if(recycleviewerInterface !=null){
                     int pos = getAdapterPosition();
                     if(pos != RecyclerView.NO_POSITION){
-                        equiposRecycleviewerInterface.onItemClick(pos);
+                        recycleviewerInterface.onItemClick(pos);
                     }
                 }
             });
