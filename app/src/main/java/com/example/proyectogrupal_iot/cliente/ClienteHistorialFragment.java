@@ -53,32 +53,30 @@ public class ClienteHistorialFragment extends Fragment implements RecycleviewerI
                              Bundle savedInstanceState) {
         FirebaseAuth firebaseAuth = FirebaseAuth.getInstance();
         firebaseDatabase = FirebaseDatabase.getInstance();
-        reference = firebaseDatabase.getReference("historial/"+firebaseAuth.getUid());
-        View view = inflater.inflate(R.layout.fragment_cliente_historial,container,false);
+        reference = firebaseDatabase.getReference("historial/" + firebaseAuth.getUid());
+        View view = inflater.inflate(R.layout.fragment_cliente_historial, container, false);
         recyclerView = view.findViewById(R.id.recycleViewer);
         recyclerView.setHasFixedSize(true);
         Context context = super.getContext();
-        HistorialAdapter historialAdapter= new HistorialAdapter(ClienteSession.getHistorialLista(), context,this);
+        HistorialAdapter historialAdapter = new HistorialAdapter(ClienteSession.getHistorialLista(), context, this);
 
-        if(notCreated) {
-            notCreated=false;
+        if (notCreated) {
+            notCreated = false;
             reference.addValueEventListener(new ValueEventListener() {
                 @Override
                 public void onDataChange(@NonNull DataSnapshot snapshot) {
                     List<Historial> historialList = new ArrayList<>();
                     for (DataSnapshot children : snapshot.getChildren()) {
                         Historial historial = children.getValue(Historial.class);
-                        if(historial!=null) {
+                        if (historial != null) {
                             historial.setKey(children.getKey());
                         }
                         historialList.add(historial);
                     }
                     ClienteSession.setHistorialLista(historialList);
-                    if(!ClienteSession.checkfiltro()) {
-                        historialAdapter.setHistorialList(ClienteSession.getHistorialLista());
-                        recyclerView.setAdapter(historialAdapter);
-                        recyclerView.setLayoutManager(new LinearLayoutManager(context));
-                    }
+                    historialAdapter.setHistorialList(ClienteSession.getHistorialLista());
+                    recyclerView.setAdapter(historialAdapter);
+                    recyclerView.setLayoutManager(new LinearLayoutManager(context));
                 }
 
                 @Override
@@ -86,7 +84,7 @@ public class ClienteHistorialFragment extends Fragment implements RecycleviewerI
 
                 }
             });
-        } else{
+        } else {
             historialAdapter.setHistorialList(ClienteSession.getHistorialLista());
             recyclerView.setAdapter(historialAdapter);
             recyclerView.setLayoutManager(new LinearLayoutManager(context));

@@ -5,34 +5,68 @@ import com.example.proyectogrupal_iot.entities.Historial;
 import com.example.proyectogrupal_iot.entities.Solicitud;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 public class ClienteSession {
 
     private static List<Equipo> equipoList = new ArrayList<>();
     private static List<Equipo> equipoFiltrado = new ArrayList<>();
-    private static boolean filtro = false;
+    private static boolean marcaFiltred = false;
+    private static boolean dispositivoFiltred = false;
+
     private static List<Solicitud> solicitudes = new ArrayList<>();
     private static List<Historial> historialLista = new ArrayList<>();
     private static String marcaFiltro = "";
     private static String dispositivoFiltro = "";
+    private static Set<String> marcas = new HashSet<>();
 
+
+    public static boolean isMarcaFiltred() {
+        return marcaFiltred;
+    }
+
+    public static boolean isDispositivoFiltred() {
+        return dispositivoFiltred;
+    }
+
+    public static void addMarca(String marca) {
+        marcas.add(marca);
+    }
+
+    public static Set<String> getMarcas() {
+        return marcas;
+    }
 
     public static void setEquipos(List<Equipo> list) {
+
         equipoList = list;
     }
 
     public static List<Equipo> getEquipos() {
-        return equipoList;
+
+        if (!marcaFiltred && !dispositivoFiltred) {
+            return equipoList;
+        }
+
+        if (equipoFiltrado.isEmpty()) {
+            for (Equipo i : equipoList) {
+                boolean saltar = false;
+                if (ClienteSession.marcaFiltred && i.getMarca().equals(ClienteSession.marcaFiltro)) {
+                    ClienteSession.equipoFiltrado.add(i);
+                    saltar = true;
+                }
+                if (!saltar & ClienteSession.dispositivoFiltred) {
+                    ClienteSession.equipoFiltrado.add(i);
+                }
+            }
+        }
+        return equipoFiltrado;
+
+
     }
 
-    public static void setFiltro(boolean value) {
-        filtro = value;
-    }
-
-    public static boolean checkfiltro() {
-        return filtro;
-    }
 
     public static void setSolicitudes(List<Solicitud> items) {
         solicitudes = items;
@@ -55,6 +89,10 @@ public class ClienteSession {
     }
 
     public static void setMarcaFiltro(String marcaFiltro) {
+        marcaFiltred = dispositivoFiltro.isEmpty();
+        if (!ClienteSession.marcaFiltro.equals(marcaFiltro)) {
+            ClienteSession.equipoFiltrado = new ArrayList<>();
+        }
         ClienteSession.marcaFiltro = marcaFiltro;
     }
 
@@ -63,6 +101,10 @@ public class ClienteSession {
     }
 
     public static void setDispositivoFiltro(String dispositivoFiltro) {
+        dispositivoFiltred = dispositivoFiltro.isEmpty();
+        if (!ClienteSession.dispositivoFiltro.equals(dispositivoFiltro)) {
+            ClienteSession.equipoFiltrado = new ArrayList<>();
+        }
         ClienteSession.dispositivoFiltro = dispositivoFiltro;
     }
 }

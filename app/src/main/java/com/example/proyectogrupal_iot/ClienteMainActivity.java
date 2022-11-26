@@ -6,6 +6,8 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -16,15 +18,13 @@ import com.example.proyectogrupal_iot.cliente.ClienteEquiposFragment;
 import com.example.proyectogrupal_iot.cliente.ClienteHistorialFragment;
 import com.example.proyectogrupal_iot.cliente.ClienteSolicitudesFragment;
 import com.example.proyectogrupal_iot.databinding.*;
-import com.example.proyectogrupal_iot.save.Session;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
+import com.example.proyectogrupal_iot.save.ClienteSession;
+import com.google.android.material.dialog.MaterialAlertDialogBuilder;
+
 
 public class ClienteMainActivity extends AppCompatActivity {
 
     ActivityClienteMainBinding binding;
-    FirebaseDatabase firebaseDatabase;
-    DatabaseReference reference;
 
     static Fragment equiposFragment, solicitudesFragment, historialFragment;
 
@@ -96,6 +96,15 @@ public class ClienteMainActivity extends AppCompatActivity {
 
     }
 
+    private void reloadFragment() {
+        Fragment frag = getSupportFragmentManager().findFragmentById(R.id.frame);
+        FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+        fragmentTransaction.commit();
+        fragmentTransaction.attach(frag);
+
+    }
+
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -112,8 +121,10 @@ public class ClienteMainActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()) {
             case R.id.filtroDispositivo:
+                mostrarOpcionesDispositivo();
                 return true;
             case R.id.filtroMarca:
+                mostrarOpcionesMarcas();
                 return true;
         }
         return super.onOptionsItemSelected(item);
@@ -121,9 +132,52 @@ public class ClienteMainActivity extends AppCompatActivity {
 
     @Override
     protected void onDestroy() {
-        equiposFragment=null;
-        solicitudesFragment=null;
-        historialFragment=null;
+        equiposFragment = null;
+        solicitudesFragment = null;
+        historialFragment = null;
         super.onDestroy();
     }
+
+    int option;
+
+    private void mostrarOpcionesDispositivo() {
+        String[] items = {"Laptop", "Tableta", "Celular", "Monitor", "Otro"};
+        option = 0;
+
+        new MaterialAlertDialogBuilder(this)
+                .setTitle("Seleccione el tipo de dispositivo")
+                .setNegativeButton("Cancelar", (dialog, which) -> {
+
+                })
+                .setPositiveButton("Buscar", (dialog,which) ->{
+                    ClienteSession.setDispositivoFiltro(items[option]);
+                })
+                .setSingleChoiceItems(items, 0, (dialog, which) -> {
+                    option=which;
+                })
+                .setBackground(getDrawable(R.drawable.background_silver_rounded))
+                .show();
+    }
+
+    private void mostrarOpcionesMarcas(){
+
+        String[] items = ClienteSession.getMarcas().toArray(new String[0]);
+        option = 0;
+
+        new MaterialAlertDialogBuilder(this)
+                .setTitle("Seleccione la marca")
+                .setNegativeButton("Cancelar", (dialog, which) -> {
+                })
+                .setPositiveButton("Buscar", (dialog,which) ->{
+                    ClienteSession.setMarcaFiltro(items[option]);
+                    reloadFragment();
+                })
+                .setSingleChoiceItems(items, 0, (dialog, which) -> {
+                    option=which;
+                })
+                .setBackground(getDrawable(R.drawable.background_silver_rounded))
+                .show();
+    }
+
+
 }

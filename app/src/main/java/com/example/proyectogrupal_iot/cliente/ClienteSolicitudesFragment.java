@@ -47,7 +47,6 @@ public class ClienteSolicitudesFragment extends Fragment implements Recycleviewe
         super.onCreate(savedInstanceState);
 
 
-
     }
 
     @Override
@@ -56,32 +55,30 @@ public class ClienteSolicitudesFragment extends Fragment implements Recycleviewe
 
         FirebaseAuth firebaseAuth = FirebaseAuth.getInstance();
         firebaseDatabase = FirebaseDatabase.getInstance();
-        reference = firebaseDatabase.getReference("solicitudes/"+firebaseAuth.getUid());
-        View view = inflater.inflate(R.layout.fragment_cliente_solicitudes,container,false);
+        reference = firebaseDatabase.getReference("solicitudes/" + firebaseAuth.getUid());
+        View view = inflater.inflate(R.layout.fragment_cliente_solicitudes, container, false);
         recyclerView = view.findViewById(R.id.recycleViewer);
         recyclerView.setHasFixedSize(true);
         Context context = super.getContext();
-        SolicitudesAdapter solicitudesAdapter= new SolicitudesAdapter(ClienteSession.getSolicitudes(), context,this);
+        SolicitudesAdapter solicitudesAdapter = new SolicitudesAdapter(ClienteSession.getSolicitudes(), context, this);
 
-        if(notCreated) {
-            notCreated=false;
+        if (notCreated) {
+            notCreated = false;
             reference.addValueEventListener(new ValueEventListener() {
                 @Override
                 public void onDataChange(@NonNull DataSnapshot snapshot) {
                     List<Solicitud> solicitudesList = new ArrayList<>();
                     for (DataSnapshot children : snapshot.getChildren()) {
                         Solicitud solicitud = children.getValue(Solicitud.class);
-                        if(solicitud!=null) {
+                        if (solicitud != null) {
                             solicitud.setKey(children.getKey());
                         }
                         solicitudesList.add(solicitud);
                     }
                     ClienteSession.setSolicitudes(solicitudesList);
-                    if(!ClienteSession.checkfiltro()) {
-                        solicitudesAdapter.setSolicitudes(ClienteSession.getSolicitudes());
-                        recyclerView.setAdapter(solicitudesAdapter);
-                        recyclerView.setLayoutManager(new LinearLayoutManager(context));
-                    }
+                    solicitudesAdapter.setSolicitudes(ClienteSession.getSolicitudes());
+                    recyclerView.setAdapter(solicitudesAdapter);
+                    recyclerView.setLayoutManager(new LinearLayoutManager(context));
                 }
 
                 @Override
@@ -89,7 +86,7 @@ public class ClienteSolicitudesFragment extends Fragment implements Recycleviewe
 
                 }
             });
-        } else{
+        } else {
             solicitudesAdapter.setSolicitudes(ClienteSession.getSolicitudes());
             recyclerView.setAdapter(solicitudesAdapter);
             recyclerView.setLayoutManager(new LinearLayoutManager(context));

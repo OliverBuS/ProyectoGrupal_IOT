@@ -36,6 +36,7 @@ public class ClienteEquiposFragment extends Fragment implements RecycleviewerInt
     DatabaseReference reference;
     FragmentClienteEquiposBinding binding;
     RecyclerView recyclerView;
+    EquiposAdapter equiposAdapter;
 
     private boolean notCreated = true;
 
@@ -51,32 +52,31 @@ public class ClienteEquiposFragment extends Fragment implements RecycleviewerInt
                              Bundle savedInstanceState) {
 
         firebaseDatabase = FirebaseDatabase.getInstance();
-        reference = firebaseDatabase.getReference("equipos" );
-        View view = inflater.inflate(R.layout.fragment_cliente_equipos,container,false);
+        reference = firebaseDatabase.getReference("equipos");
+        View view = inflater.inflate(R.layout.fragment_cliente_equipos, container, false);
         recyclerView = view.findViewById(R.id.recycleViewer);
         recyclerView.setHasFixedSize(true);
         Context context = super.getContext();
-        EquiposAdapter equiposAdapter = new EquiposAdapter(ClienteSession.getEquipos(), context,this);
+        equiposAdapter = new EquiposAdapter(ClienteSession.getEquipos(), context, this);
 
-        if(notCreated) {
-            notCreated=false;
+        if (notCreated) {
+            notCreated = false;
             reference.orderByChild("stock").startAt(1).addValueEventListener(new ValueEventListener() {
                 @Override
                 public void onDataChange(@NonNull DataSnapshot snapshot) {
                     List<Equipo> equipoList = new ArrayList<>();
                     for (DataSnapshot children : snapshot.getChildren()) {
                         Equipo equipo = children.getValue(Equipo.class);
-                        if(equipo!=null) {
+                        if (equipo != null) {
                             equipo.setKey(children.getKey());
+                            ClienteSession.addMarca(equipo.getMarca());
                         }
                         equipoList.add(equipo);
                     }
                     ClienteSession.setEquipos(equipoList);
-                    if(!ClienteSession.checkfiltro()) {
-                        equiposAdapter.setEquipos(ClienteSession.getEquipos());
-                        recyclerView.setAdapter(equiposAdapter);
-                        recyclerView.setLayoutManager(new LinearLayoutManager(context));
-                    }
+                    equiposAdapter.setEquipos(ClienteSession.getEquipos());
+                    recyclerView.setAdapter(equiposAdapter);
+                    recyclerView.setLayoutManager(new LinearLayoutManager(context));
                 }
 
                 @Override
@@ -84,7 +84,7 @@ public class ClienteEquiposFragment extends Fragment implements RecycleviewerInt
 
                 }
             });
-        } else{
+        } else {
             equiposAdapter.setEquipos(ClienteSession.getEquipos());
             recyclerView.setAdapter(equiposAdapter);
             recyclerView.setLayoutManager(new LinearLayoutManager(context));
@@ -97,7 +97,7 @@ public class ClienteEquiposFragment extends Fragment implements RecycleviewerInt
     @Override
     public void onItemClick(int position) {
         Intent intent = new Intent(getActivity(), ClienteEquipoActivity.class);
-        intent.putExtra("equipo",ClienteSession.getEquipos().get(position));
+        intent.putExtra("equipo", ClienteSession.getEquipos().get(position));
         startActivity(intent);
     }
 
