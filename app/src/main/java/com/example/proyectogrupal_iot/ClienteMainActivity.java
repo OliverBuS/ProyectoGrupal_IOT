@@ -2,6 +2,7 @@ package com.example.proyectogrupal_iot;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.content.res.AppCompatResources;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
@@ -60,23 +61,20 @@ public class ClienteMainActivity extends AppCompatActivity {
 
 
         binding.bottomNav.setOnItemSelectedListener(item -> {
-            switch (item.getItemId()) {
-                case R.id.equipos:
-                    replaceFragment(equiposFragment);
-                    navValue = 0;
-                    mostrarFiltro(true);
-                    break;
-                case R.id.solicitudes:
-                    replaceFragment(solicitudesFragment);
-                    navValue = 1;
-                    mostrarFiltro(false);
-                    break;
-                case R.id.historial:
-                    replaceFragment(historialFragment);
-                    mostrarFiltro(false);
-                    navValue = 2;
-                    break;
+            int id = item.getItemId();
 
+            if(id==R.id.equipos){
+                replaceFragment(equiposFragment);
+                navValue = 0;
+                mostrarFiltro(true);
+            } else if ( id == R.id.solicitudes){
+                replaceFragment(solicitudesFragment);
+                navValue = 1;
+                mostrarFiltro(false);
+            } else if (id == R.id.historial){
+                replaceFragment(historialFragment);
+                mostrarFiltro(false);
+                navValue = 2;
             }
             return true;
         });
@@ -114,15 +112,15 @@ public class ClienteMainActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        switch (item.getItemId()) {
-            case R.id.filtroDispositivo:
-                mostrarOpcionesDispositivo();
-                return true;
-            case R.id.filtroMarca:
-                mostrarOpcionesMarcas();
-                return true;
+        if(item.getItemId() == R.id.filtroDispositivo){
+            mostrarOpcionesDispositivo();
+            return true;
+        } else if(item.getItemId() == R.id.filtroMarca){
+            mostrarOpcionesMarcas();
+            return true;
         }
         return super.onOptionsItemSelected(item);
+
     }
 
     @Override
@@ -151,7 +149,7 @@ public class ClienteMainActivity extends AppCompatActivity {
                 .setSingleChoiceItems(items, 0, (dialog, which) -> {
                     option=which;
                 })
-                .setBackground(getDrawable(R.drawable.background_silver_rounded))
+                .setBackground(AppCompatResources.getDrawable(this,R.drawable.background_silver_rounded))
                 .show();
     }
 
@@ -171,7 +169,7 @@ public class ClienteMainActivity extends AppCompatActivity {
                 .setSingleChoiceItems(items, 0, (dialog, which) -> {
                     option=which;
                 })
-                .setBackground(getDrawable(R.drawable.background_silver_rounded))
+                .setBackground(AppCompatResources.getDrawable(this,R.drawable.background_silver_rounded))
                 .show();
     }
 
