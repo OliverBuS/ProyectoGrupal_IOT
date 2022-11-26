@@ -12,6 +12,8 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import com.example.proyectogrupal_iot.ClienteEquipoActivity;
 import com.example.proyectogrupal_iot.R;
@@ -37,6 +39,9 @@ public class ClienteEquiposFragment extends Fragment implements RecycleviewerInt
     FragmentClienteEquiposBinding binding;
     RecyclerView recyclerView;
     EquiposAdapter equiposAdapter;
+    TextView textMarca, textDispositivo;
+    LinearLayout vistafiltros, labelMarca, labelDispositivo;
+    Context context;
 
     private boolean notCreated = true;
 
@@ -55,12 +60,33 @@ public class ClienteEquiposFragment extends Fragment implements RecycleviewerInt
         reference = firebaseDatabase.getReference("equipos");
         View view = inflater.inflate(R.layout.fragment_cliente_equipos, container, false);
         recyclerView = view.findViewById(R.id.recycleViewer);
+        labelDispositivo = view.findViewById(R.id.labelDispositivo);
+        labelMarca = view.findViewById(R.id.labelMarca);
+        vistafiltros = view.findViewById(R.id.vistaFiltros);
+        textDispositivo = view.findViewById(R.id.textoDispositivo);
+        textMarca = view.findViewById(R.id.textMarca);
+
+        labelMarca.setOnClickListener(v -> {
+            ClienteSession.setMarcaFiltro("");
+            reloadList();
+        });
+
+        labelDispositivo.setOnClickListener(v -> {
+            ClienteSession.setDispositivoFiltro("");
+            reloadList();
+        });
+
+
         recyclerView.setHasFixedSize(true);
-        Context context = super.getContext();
+        context = super.getContext();
         equiposAdapter = new EquiposAdapter(ClienteSession.getEquipos(), context, this);
 
         if (notCreated) {
             notCreated = false;
+
+
+
+
             reference.orderByChild("stock").startAt(1).addValueEventListener(new ValueEventListener() {
                 @Override
                 public void onDataChange(@NonNull DataSnapshot snapshot) {
@@ -74,9 +100,7 @@ public class ClienteEquiposFragment extends Fragment implements RecycleviewerInt
                         equipoList.add(equipo);
                     }
                     ClienteSession.setEquipos(equipoList);
-                    equiposAdapter.setEquipos(ClienteSession.getEquipos());
-                    recyclerView.setAdapter(equiposAdapter);
-                    recyclerView.setLayoutManager(new LinearLayoutManager(context));
+                    reloadList();
                 }
 
                 @Override
@@ -85,12 +109,37 @@ public class ClienteEquiposFragment extends Fragment implements RecycleviewerInt
                 }
             });
         } else {
-            equiposAdapter.setEquipos(ClienteSession.getEquipos());
-            recyclerView.setAdapter(equiposAdapter);
-            recyclerView.setLayoutManager(new LinearLayoutManager(context));
+            reloadList();
         }
 
         return view;
+    }
+
+
+    public void reloadList() {
+        if (ClienteSession.isMarcaFiltred()) {
+            labelMarca.setVisibility(View.VISIBLE);
+            textMarca.setText(ClienteSession.getMarcaFiltro());
+        } else {
+            labelMarca.setVisibility(View.GONE);
+        }
+        if(ClienteSession.isDispositivoFiltred()) {
+            labelDispositivo.setVisibility(View.VISIBLE);
+            textDispositivo.setText(ClienteSession.getDispositivoFiltro());
+        } else{
+            labelDispositivo.setVisibility(View.GONE);
+        }
+
+        if(!ClienteSession.isDispositivoFiltred() && !ClienteSession.isMarcaFiltred()){
+            vistafiltros.setVisibility(View.GONE);
+        } else{
+            vistafiltros.setVisibility(View.VISIBLE);
+        }
+
+
+        equiposAdapter.setEquipos(ClienteSession.getEquipos());
+        recyclerView.setAdapter(equiposAdapter);
+        recyclerView.setLayoutManager(new LinearLayoutManager(context));
     }
 
 
@@ -105,7 +154,6 @@ public class ClienteEquiposFragment extends Fragment implements RecycleviewerInt
     public void onSaveInstanceState(@NonNull Bundle outState) {
         super.onSaveInstanceState(outState);
     }
-
 
 
 }

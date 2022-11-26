@@ -26,7 +26,9 @@ public class ClienteMainActivity extends AppCompatActivity {
 
     ActivityClienteMainBinding binding;
 
-    static Fragment equiposFragment, solicitudesFragment, historialFragment;
+    ClienteEquiposFragment equiposFragment;
+    ClienteSolicitudesFragment solicitudesFragment;
+    ClienteHistorialFragment historialFragment;
 
     public static int navValue = 0;
 
@@ -96,13 +98,6 @@ public class ClienteMainActivity extends AppCompatActivity {
 
     }
 
-    private void reloadFragment() {
-        Fragment frag = getSupportFragmentManager().findFragmentById(R.id.frame);
-        FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
-        fragmentTransaction.commit();
-        fragmentTransaction.attach(frag);
-
-    }
 
 
 
@@ -151,6 +146,7 @@ public class ClienteMainActivity extends AppCompatActivity {
                 })
                 .setPositiveButton("Buscar", (dialog,which) ->{
                     ClienteSession.setDispositivoFiltro(items[option]);
+                    equiposFragment.reloadList();
                 })
                 .setSingleChoiceItems(items, 0, (dialog, which) -> {
                     option=which;
@@ -170,7 +166,7 @@ public class ClienteMainActivity extends AppCompatActivity {
                 })
                 .setPositiveButton("Buscar", (dialog,which) ->{
                     ClienteSession.setMarcaFiltro(items[option]);
-                    reloadFragment();
+                    equiposFragment.reloadList();
                 })
                 .setSingleChoiceItems(items, 0, (dialog, which) -> {
                     option=which;

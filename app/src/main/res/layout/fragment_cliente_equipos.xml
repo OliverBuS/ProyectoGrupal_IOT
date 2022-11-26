@@ -10,13 +10,65 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:gravity="center"
+        android:gravity="top"
         >
         <LinearLayout
+            android:layout_marginVertical="4dp"
+            android:id="@+id/vistaFiltros"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:gravity="start">
+            android:visibility="gone"
+            android:gravity="center_vertical">
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Filtros: "
+                android:textSize="22sp"/>
+
+            <LinearLayout
+                android:id="@+id/labelMarca"
+                android:background="@drawable/background_label_rounded"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center">
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/textMarca"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:text="Marca"/>
+                <ImageView
+                    android:layout_marginStart="2dp"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:src="@drawable/ic_baseline_remove_circle_outline_32"
+                    />
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/labelDispositivo"
+                 android:layout_marginStart="4dp"
+                android:background="@drawable/background_label_rounded"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center">
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/textoDispositivo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:text="Dispositivo"/>
+                <ImageView
+                    android:layout_marginStart="2dp"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:src="@drawable/ic_baseline_remove_circle_outline_32"
+                    />
+            </LinearLayout>
+
+
 
 
         </LinearLayout>

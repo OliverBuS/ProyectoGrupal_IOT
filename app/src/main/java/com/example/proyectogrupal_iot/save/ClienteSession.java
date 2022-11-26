@@ -40,7 +40,7 @@ public class ClienteSession {
     }
 
     public static void setEquipos(List<Equipo> list) {
-
+        equipoFiltrado=new ArrayList<>();
         equipoList = list;
     }
 
@@ -50,20 +50,32 @@ public class ClienteSession {
             return equipoList;
         }
 
-        if (equipoFiltrado.isEmpty()) {
-            for (Equipo i : equipoList) {
-                boolean saltar = false;
-                if (ClienteSession.marcaFiltred && i.getMarca().equals(ClienteSession.marcaFiltro)) {
-                    ClienteSession.equipoFiltrado.add(i);
-                    saltar = true;
+
+        if(!equipoFiltrado.isEmpty()){
+            return equipoFiltrado;
+        }
+
+        if(marcaFiltred && dispositivoFiltred){
+            for(Equipo i : equipoList){
+                if(i.getMarca().equals(marcaFiltro) && i.getDispositivo().equals(dispositivoFiltro)) {
+                    equipoFiltrado.add(i);
                 }
-                if (!saltar & ClienteSession.dispositivoFiltred) {
-                    ClienteSession.equipoFiltrado.add(i);
+            }
+        } else if(marcaFiltred){
+            for(Equipo i : equipoList){
+                if(i.getMarca().equals(marcaFiltro)) {
+                    equipoFiltrado.add(i);
+                }
+            }
+        } else{
+            for(Equipo i : equipoList){
+                if(i.getDispositivo().equals(dispositivoFiltro)) {
+                    equipoFiltrado.add(i);
                 }
             }
         }
-        return equipoFiltrado;
 
+        return equipoFiltrado;
 
     }
 
@@ -89,7 +101,7 @@ public class ClienteSession {
     }
 
     public static void setMarcaFiltro(String marcaFiltro) {
-        marcaFiltred = dispositivoFiltro.isEmpty();
+        marcaFiltred = !marcaFiltro.isEmpty();
         if (!ClienteSession.marcaFiltro.equals(marcaFiltro)) {
             ClienteSession.equipoFiltrado = new ArrayList<>();
         }
@@ -101,7 +113,7 @@ public class ClienteSession {
     }
 
     public static void setDispositivoFiltro(String dispositivoFiltro) {
-        dispositivoFiltred = dispositivoFiltro.isEmpty();
+        dispositivoFiltred = !dispositivoFiltro.isEmpty();
         if (!ClienteSession.dispositivoFiltro.equals(dispositivoFiltro)) {
             ClienteSession.equipoFiltrado = new ArrayList<>();
         }
