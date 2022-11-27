@@ -1,5 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/2022-2/1TEL05 AppsIoT/ProyectoGrupal_IOT/app/src/main/res/drawable/ic_baseline_account_circle_32.xml" value="0.1" />
+        <entry key="..\:/2022-2/1TEL05 AppsIoT/ProyectoGrupal_IOT/app/src/main/res/drawable/ic_baseline_profile_32.xml" value="0.1945" />
+        <entry key="..\:/2022-2/1TEL05 AppsIoT/ProyectoGrupal_IOT/app/src/main/res/drawable/ic_baseline_remove_circle_outline_32.xml" value="0.1" />
+        <entry key="..\:/2022-2/1TEL05 AppsIoT/ProyectoGrupal_IOT/app/src/main/res/drawable/ic_baseline_search_32.xml" value="0.1945" />
+        <entry key="..\:/2022-2/1TEL05 AppsIoT/ProyectoGrupal_IOT/app/src/main/res/layout/activity_anadir_dispositivo.xml" value="0.22" />
+        <entry key="..\:/2022-2/1TEL05 AppsIoT/ProyectoGrupal_IOT/app/src/main/res/layout/activity_check_user.xml" value="0.17074275362318841" />
+        <entry key="..\:/2022-2/1TEL05 AppsIoT/ProyectoGrupal_IOT/app/src/main/res/layout/activity_cliente_equipo.xml" value="0.17074275362318841" />
+        <entry key="..\:/2022-2/1TEL05 AppsIoT/ProyectoGrupal_IOT/app/src/main/res/layout/activity_cliente_form_solicitud.xml" value="0.16259057971014493" />
+        <entry key="..\:/2022-2/1TEL05 AppsIoT/ProyectoGrupal_IOT/app/src/main/res/layout/activity_cliente_main.xml" value="0.22" />
+        <entry key="..\:/2022-2/1TEL05 AppsIoT/ProyectoGrupal_IOT/app/src/main/res/layout/activity_main.xml" value="0.17074275362318841" />
+        <entry key="..\:/2022-2/1TEL05 AppsIoT/ProyectoGrupal_IOT/app/src/main/res/layout/activity_recuperar_cambio.xml" value="0.16259057971014493" />
+        <entry key="..\:/2022-2/1TEL05 AppsIoT/ProyectoGrupal_IOT/app/src/main/res/layout/activity_recuperar_codigo.xml" value="0.16259057971014493" />
+        <entry key="..\:/2022-2/1TEL05 AppsIoT/ProyectoGrupal_IOT/app/src/main/res/layout/activity_recuperar_correo.xml" value="0.16259057971014493" />
+        <entry key="..\:/2022-2/1TEL05 AppsIoT/ProyectoGrupal_IOT/app/src/main/res/layout/activity_registro_codigo.xml" value="0.16259057971014493" />
+        <entry key="..\:/2022-2/1TEL05 AppsIoT/ProyectoGrupal_IOT/app/src/main/res/layout/activity_registro_form.xml" value="0.16259057971014493" />
+        <entry key="..\:/2022-2/1TEL05 AppsIoT/ProyectoGrupal_IOT/app/src/main/res/layout/activity_ti_main.xml" value="0.22" />
+        <entry key="..\:/2022-2/1TEL05 AppsIoT/ProyectoGrupal_IOT/app/src/main/res/layout/fragment_cliente_equipos.xml" value="0.17074275362318841" />
+        <entry key="..\:/2022-2/1TEL05 AppsIoT/ProyectoGrupal_IOT/app/src/main/res/layout/fragment_cliente_historial.xml" value="0.17074275362318841" />
+        <entry key="..\:/2022-2/1TEL05 AppsIoT/ProyectoGrupal_IOT/app/src/main/res/layout/fragment_cliente_solicitudes.xml" value="0.17074275362318841" />
+        <entry key="..\:/2022-2/1TEL05 AppsIoT/ProyectoGrupal_IOT/app/src/main/res/layout/recycle_equipos_lista.xml" value="0.16259057971014493" />
+        <entry key="..\:/2022-2/1TEL05 AppsIoT/ProyectoGrupal_IOT/app/src/main/res/layout/recycle_historial_vista.xml" value="0.16259057971014493" />
+        <entry key="..\:/2022-2/1TEL05 AppsIoT/ProyectoGrupal_IOT/app/src/main/res/layout/recycle_solicitud_lista.xml" value="0.17074275362318841" />
+        <entry key="..\:/2022-2/1TEL05 AppsIoT/ProyectoGrupal_IOT/app/src/main/res/menu/menu_cliente.xml" value="0.33" />
+        <entry key="..\:/2022-2/1TEL05 AppsIoT/ProyectoGrupal_IOT/app/src/main/res/menu/menu_cliente_equipos.xml" value="0.209375" />
+        <entry key="..\:/2022-2/1TEL05 AppsIoT/ProyectoGrupal_IOT/app/src/main/res/menu/menu_solicitar.xml" value="0.209375" />
+        <entry key="..\:/2022-2/1TEL05 AppsIoT/ProyectoGrupal_IOT/app/src/main/res/menu/menu_ti.xml" value="0.209375" />
+        <entry key="..\:/2022-2/1TEL05 AppsIoT/ProyectoGrupal_IOT/app/src/main/res/menu/menu_ti_equipos.xml" value="0.209375" />
+      </map>
+    </option>
+  </component>
   <component name="ExternalStorageConfigurationManager" enabled="true" />
   <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
