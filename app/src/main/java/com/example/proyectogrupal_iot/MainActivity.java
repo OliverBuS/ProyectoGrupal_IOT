@@ -58,6 +58,8 @@ public class MainActivity extends AppCompatActivity {
                                             Session.codigo = readSession.getCodigo();
                                             if (Session.rol.equals("alumno")) {
                                                 goHome();
+                                            } else if (Session.rol.equals("TI")) {
+                                                goHomeTI();
                                             } else {
                                                 Toast.makeText(MainActivity.this, "Tu rol está pendiente", Toast.LENGTH_SHORT).show();
                                             }
@@ -108,6 +110,12 @@ public class MainActivity extends AppCompatActivity {
 
     private void goHome(){
         Intent intent = new Intent(this, ClienteMainActivity.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        startActivity(intent);
+    }
+
+    private void goHomeTI(){
+        Intent intent = new Intent(this, TIMainActivity.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
         startActivity(intent);
     }

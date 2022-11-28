@@ -26,7 +26,7 @@
         <androidx.appcompat.widget.AppCompatSpinner
             android:id="@+id/edTipo"
             android:layout_width="match_parent"
-            android:layout_height="48"
+            android:layout_height="48dp"
             android:layout_marginTop="4dp"
             android:background="@drawable/background_gray_rounded"
             android:gravity="start|top"
@@ -117,7 +117,7 @@
         <androidx.appcompat.widget.AppCompatEditText
             android:id="@+id/edCaracteristicas"
             android:layout_width="match_parent"
-            android:layout_height="48"
+            android:layout_height="48dp"
             android:layout_marginTop="4dp"
             android:background="@drawable/background_gray_rounded"
             android:gravity="start|top"
