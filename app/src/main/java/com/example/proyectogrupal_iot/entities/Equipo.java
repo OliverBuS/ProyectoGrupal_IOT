@@ -8,7 +8,6 @@ public class Equipo implements Serializable {
 
     private String key;
     private String dispositivo;
-    private int tipo;
     private String marca;
     private String caracteristicas;
     private String incluye;
@@ -21,12 +20,13 @@ public class Equipo implements Serializable {
     public Equipo() {
     }
 
-    public Equipo(String dispositivo, String marca, String caracteristicas, String incluye, List<String> imagenes) {
+    public Equipo(String dispositivo, String marca, String caracteristicas, String incluye, List<String> imagenes, int stock) {
         this.dispositivo = dispositivo;
         this.marca = marca;
         this.caracteristicas = caracteristicas;
         this.incluye = incluye;
         this.imagenes = imagenes;
+        this.stock = stock;
     }
 
     public int getStock() {
@@ -91,14 +91,6 @@ public class Equipo implements Serializable {
 
     public List<String> getImagenesSecundarias(){
         return  imagenes.subList(1,0);
-    }
-
-    public int getTipo() {
-        return tipo;
-    }
-
-    public void setTipo(int tipo) {
-        this.tipo = tipo;
     }
 
     public String getMarcaOtro() {

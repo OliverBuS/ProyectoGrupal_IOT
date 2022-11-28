@@ -33,6 +33,8 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 
+import java.util.Arrays;
+import java.util.HashMap;
 import java.util.Random;
 
 public class FormEquipoFragment extends Fragment {
@@ -42,7 +44,6 @@ public class FormEquipoFragment extends Fragment {
     StorageReference storageReference;
     EditText tipoOtroEquipo, marcaEquipo, caracteristicasEquipo, incluyeEquipo, stockEquipo;
     Spinner tipoEquipo;
-    Equipo equipo = new Equipo();
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -105,12 +106,13 @@ public class FormEquipoFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 boolean fine = true;
-                int tipoeqp = 0;
+
                 char randomizedCharacter1 = (char) (random.nextInt(26) + 'A');
                 char randomizedCharacter2 = (char) (random.nextInt(26) + 'A');
                 char randomizedCharacter3 = (char) (random.nextInt(26) + 'A');
                 String identificador=String.valueOf(randomizedCharacter1)
                         +String.valueOf(randomizedCharacter2)+String.valueOf(randomizedCharacter3);
+
                 String marcaEquipoStr = marcaEquipo.getText().toString().trim();
                 String caracteristicasEquipoStr = caracteristicasEquipo.getText().toString().trim();
                 String incluyeEquipoStr = incluyeEquipo.getText().toString().trim();
@@ -118,51 +120,31 @@ public class FormEquipoFragment extends Fragment {
                 int stockInt = Integer.parseInt(stockEquipoStr);
                 String tipoEquipoStr = tipoEquipo.getSelectedItem().toString();
                 String tipoOtroEquipoStr = tipoOtroEquipo.getText().toString().trim();
-                switch (tipoEquipoStr) {
-                    case "Tableta":
-                        tipoeqp = 1;
-                        break;
-                    case "Laptop":
-                        tipoeqp = 2;
-                        break;
-                    case "Celular":
-                        tipoeqp = 3;
-                        break;
-                    case "Otro":
-                        tipoeqp = 4;
-                        break;
-                    default:
-                        fine = false;
-                }
 
-                if (fine) {
-                    equipo.setImagenes(null);
-                    equipo.setMarca(marcaEquipoStr);
-                    equipo.setCaracteristicas(caracteristicasEquipoStr);
-                    equipo.setIncluye(incluyeEquipoStr);
-                    equipo.setStock(stockInt);
-                    equipo.setDispositivo(tipoEquipoStr);
-                    equipo.setTipo(tipoeqp);
-                    equipo.setMarcaOtro(tipoOtroEquipoStr);
+                HashMap<String, String> userMap = new HashMap<>();
 
-                    System.out.println(identificador);
-                    refequipos.child(identificador).setValue(equipo);
+                userMap.put("dispositivo",tipoEquipoStr);
+                userMap.put("marca", marcaEquipoStr);
+                userMap.put("caracteristicas", caracteristicasEquipoStr);
+                userMap.put("incluye", incluyeEquipoStr);
+                userMap.put("stock", stockEquipoStr);
+                userMap.put("imagenes", "");
+
+                refequipos.child(identificador).push().setValue(userMap).addOnCompleteListener(unused -> {
                     Toast.makeText(getContext(), "Equipo guardado correctamente", Toast.LENGTH_SHORT).show();
+                });
 
-                    tipoOtroEquipo.setText("");
-                    marcaEquipo.setText("");
-                    caracteristicasEquipo.setText("");
-                    incluyeEquipo.setText("");
-                    stockEquipo.setText("");
+                tipoOtroEquipo.setText("");
+                marcaEquipo.setText("");
+                caracteristicasEquipo.setText("");
+                incluyeEquipo.setText("");
+                stockEquipo.setText("");
 
-                    AppCompatActivity activity = (AppCompatActivity) getContext();
-                    activity.getSupportFragmentManager().beginTransaction()
-                            .setReorderingAllowed(true)
-                            .replace(R.id.frame_container_TI, TIEquiposFragment.newInstance("", ""))
-                            .addToBackStack(null).commit();
-                } else {
-                    Toast.makeText(getContext(), "Debe seleccionar un tipo de equipo", Toast.LENGTH_SHORT).show();
-                }
+                AppCompatActivity activity = (AppCompatActivity) getContext();
+                activity.getSupportFragmentManager().beginTransaction()
+                        .setReorderingAllowed(true)
+                        .replace(R.id.frame_container_TI, TIEquiposFragment.newInstance("", ""))
+                        .addToBackStack(null).commit();
             };
         });
         return view;
