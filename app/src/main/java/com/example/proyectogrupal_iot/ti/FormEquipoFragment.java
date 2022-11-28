@@ -107,12 +107,6 @@ public class FormEquipoFragment extends Fragment {
             public void onClick(View v) {
                 boolean fine = true;
 
-                char randomizedCharacter1 = (char) (random.nextInt(26) + 'A');
-                char randomizedCharacter2 = (char) (random.nextInt(26) + 'A');
-                char randomizedCharacter3 = (char) (random.nextInt(26) + 'A');
-                String identificador=String.valueOf(randomizedCharacter1)
-                        +String.valueOf(randomizedCharacter2)+String.valueOf(randomizedCharacter3);
-
                 String marcaEquipoStr = marcaEquipo.getText().toString().trim();
                 String caracteristicasEquipoStr = caracteristicasEquipo.getText().toString().trim();
                 String incluyeEquipoStr = incluyeEquipo.getText().toString().trim();
@@ -128,9 +122,8 @@ public class FormEquipoFragment extends Fragment {
                 userMap.put("caracteristicas", caracteristicasEquipoStr);
                 userMap.put("incluye", incluyeEquipoStr);
                 userMap.put("stock", stockEquipoStr);
-                userMap.put("imagenes", "");
 
-                refequipos.child(identificador).push().setValue(userMap).addOnCompleteListener(unused -> {
+                refequipos.push().setValue(userMap).addOnSuccessListener(unused -> {
                     Toast.makeText(getContext(), "Equipo guardado correctamente", Toast.LENGTH_SHORT).show();
                 });
 
