@@ -15,9 +15,11 @@ import android.view.ViewGroup;
 import android.widget.Toast;
 
 import com.example.proyectogrupal_iot.R;
+import com.example.proyectogrupal_iot.adapter.SolicitudesAdapter;
 import com.example.proyectogrupal_iot.adapter.TISolicitudesAdapter;
 import com.example.proyectogrupal_iot.entities.Solicitud;
 import com.example.proyectogrupal_iot.interfaces.RecycleviewerInterface;
+import com.example.proyectogrupal_iot.save.ClienteSession;
 import com.example.proyectogrupal_iot.save.TISession;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
@@ -53,7 +55,7 @@ public class TISolicitudesFragment extends Fragment implements RecycleviewerInte
         recyclerView = view.findViewById(R.id.recycleViewer);
         recyclerView.setHasFixedSize(true);
         Context context = super.getContext();
-        TISolicitudesAdapter tisolicitudesAdapter = new TISolicitudesAdapter(TISession.getSolicitudes(), context, this);
+        SolicitudesAdapter solicitudesAdapter = new SolicitudesAdapter(ClienteSession.getSolicitudes(), context, this);
 
         if (notCreated) {
             notCreated = false;
@@ -68,9 +70,9 @@ public class TISolicitudesFragment extends Fragment implements RecycleviewerInte
                         }
                         solicitudesList.add(solicitud);
                     }
-                    TISession.setSolicitudes(solicitudesList);
-                    tisolicitudesAdapter.setSolicitudes(TISession.getSolicitudes());
-                    recyclerView.setAdapter(tisolicitudesAdapter);
+                    ClienteSession.setSolicitudes(solicitudesList);
+                    solicitudesAdapter.setSolicitudes(ClienteSession.getSolicitudes());
+                    recyclerView.setAdapter(solicitudesAdapter);
                     recyclerView.setLayoutManager(new LinearLayoutManager(context));
                 }
 
@@ -80,8 +82,8 @@ public class TISolicitudesFragment extends Fragment implements RecycleviewerInte
                 }
             });
         } else {
-            tisolicitudesAdapter.setSolicitudes(TISession.getSolicitudes());
-            recyclerView.setAdapter(tisolicitudesAdapter);
+            solicitudesAdapter.setSolicitudes(ClienteSession.getSolicitudes());
+            recyclerView.setAdapter(solicitudesAdapter);
             recyclerView.setLayoutManager(new LinearLayoutManager(context));
         }
 

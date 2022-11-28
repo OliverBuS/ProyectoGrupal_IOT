@@ -8,6 +8,7 @@ public class Equipo implements Serializable {
 
     private String key;
     private String dispositivo;
+    private int tipo;
     private String marca;
     private String caracteristicas;
     private String incluye;
@@ -90,6 +91,14 @@ public class Equipo implements Serializable {
 
     public List<String> getImagenesSecundarias(){
         return  imagenes.subList(1,0);
+    }
+
+    public int getTipo() {
+        return tipo;
+    }
+
+    public void setTipo(int tipo) {
+        this.tipo = tipo;
     }
 
     public String getMarcaOtro() {

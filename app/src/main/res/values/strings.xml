@@ -4,4 +4,11 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="cancelar">Cancelar</string>
     <string name="buscar">Buscar</string>
+    <string-array name="listaEquipos">
+        <item>Seleccione el tipo de Equipo</item>
+        <item>Tableta</item>
+        <item>Laptop</item>
+        <item>Celular</item>
+        <item>Otro</item>
+    </string-array>
 </resources>

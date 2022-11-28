@@ -16,7 +16,7 @@
             android:name=".TIMainActivity"
             android:exported="false" />
         <activity
-            android:name=".AddEditDispositivoActivity"
+            android:name=".ti.FormEquipoFragment"
             android:exported="false" />
         <activity
             android:name=".CheckUser"

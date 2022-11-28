@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".AddEditDispositivoActivity">
+    tools:context=".ti.FormEquipoFragment">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -29,6 +29,7 @@
             android:layout_height="48dp"
             android:layout_marginTop="4dp"
             android:background="@drawable/background_gray_rounded"
+            android:entries="@array/listaEquipos"
             android:gravity="start|top"
             android:padding="10dp"
             android:textColor="@color/black"

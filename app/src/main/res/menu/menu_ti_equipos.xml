@@ -9,13 +9,13 @@
         <menu>
             <item
                 android:id="@+id/anadirDispositivo"
-                android:title="Añadir"
                 android:orderInCategory="1"
+                android:title="Añadir"
                 app:showAsAction="never" />
             <item
                 android:id="@+id/eliminarDispositivo"
-                android:title="Eliminar"
                 android:orderInCategory="2"
+                android:title="Eliminar"
                 app:showAsAction="never" />
         </menu>
 
