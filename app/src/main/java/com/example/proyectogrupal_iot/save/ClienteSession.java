@@ -119,4 +119,17 @@ public class ClienteSession {
         }
         ClienteSession.dispositivoFiltro = dispositivoFiltro;
     }
+
+    public static void finish(){
+        equipoList = new ArrayList<>();
+        equipoFiltrado = new ArrayList<>();
+        marcaFiltred = false;
+        dispositivoFiltred = false;
+        solicitudes = new ArrayList<>();
+        historialLista = new ArrayList<>();
+        marcaFiltro = "";
+        dispositivoFiltro = "";
+        marcas = new HashSet<>();
+    }
+
 }

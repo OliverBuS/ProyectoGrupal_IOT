@@ -6,7 +6,9 @@
     android:layout_height="match_parent"
     android:gravity="center_horizontal"
     android:orientation="vertical"
-    tools:context=".RecuperarCorreoActivity">
+    tools:context=".RecuperarCorreoActivity"
+    android:background="@color/white"
+    >
 
 
     <TextView
@@ -18,7 +20,7 @@
         android:textColor="@color/black"
         android:justificationMode="inter_word"
         android:gravity="center"
-        android:text="Indica tu dirección de correo electrónico para enviarte un código de recuperación"/>
+        android:text="Indica tu dirección de correo electrónico para enviarte un link de recuperación"/>
 
     <ImageView
         android:layout_marginVertical="16dp"
@@ -42,14 +44,16 @@
             android:textSize="22sp"
             android:textStyle="bold"/>
         <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/edMail"
             android:layout_marginTop="40dp"
             android:layout_width="300dp"
             android:layout_height="68dp"
             android:inputType="textEmailAddress"
             android:hint="Correo"
-            android:textSize="24sp"
+            android:textSize="20sp"
             android:paddingStart="14dp"
-            android:background="@drawable/background_white_rounded"/>
+            android:background="@drawable/background_white_rounded"
+            android:textColor="@color/black"/>
 
         <LinearLayout
             android:layout_width="match_parent"

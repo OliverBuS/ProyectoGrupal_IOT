@@ -56,7 +56,7 @@ public class CheckUser extends AppCompatActivity {
                             Session.rol = readSession.getRol();
                             Session.codigo = readSession.getCodigo();
 
-                            if (Session.rol.equals("alumno")) {
+                            if (Session.rol.equals("Alumno")) {
                                 goHome();
                             } else {
                                 Toast.makeText(CheckUser.this, "Tu rol está pendiente", Toast.LENGTH_SHORT).show();

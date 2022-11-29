@@ -12,7 +12,7 @@
         android:layout_height="wrap_content"
         android:text="Cuenta@correo.com\n2020XXXX"
         android:textColor="@color/white"
-        android:textSize="22sp"/>
+        android:textSize="18sp"/>
 
 
 

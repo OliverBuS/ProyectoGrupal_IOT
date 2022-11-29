@@ -15,6 +15,7 @@ import android.view.ViewGroup;
 import android.widget.Toast;
 
 import com.example.proyectogrupal_iot.ClienteEquipoActivity;
+import com.example.proyectogrupal_iot.ClienteSolicitudActivity;
 import com.example.proyectogrupal_iot.R;
 import com.example.proyectogrupal_iot.adapter.EquiposAdapter;
 import com.example.proyectogrupal_iot.adapter.SolicitudesAdapter;
@@ -97,7 +98,9 @@ public class ClienteSolicitudesFragment extends Fragment implements Recycleviewe
 
     @Override
     public void onItemClick(int position) {
-        Toast.makeText(this.getContext(), "A desarrollar", Toast.LENGTH_SHORT).show();
+        Intent intent = new Intent(getContext(), ClienteSolicitudActivity.class);
+        intent.putExtra("solicitud", ClienteSession.getSolicitudes().get(position));
+        startActivity(intent);
     }
 
 }

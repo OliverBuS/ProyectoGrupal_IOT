@@ -11,6 +11,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.content.res.AppCompatResources;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -19,6 +20,7 @@ import com.example.proyectogrupal_iot.R;
 import com.example.proyectogrupal_iot.entities.Historial;
 import com.example.proyectogrupal_iot.entities.Solicitud;
 import com.example.proyectogrupal_iot.interfaces.RecycleviewerInterface;
+import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 
@@ -99,6 +101,13 @@ public class HistorialAdapter extends RecyclerView.Adapter<HistorialAdapter.Hist
             estado.setText("Rechazado");
             cardView.getBackground().setTint(Color.parseColor("#EF5350"));
             estado.setCompoundDrawablesWithIntrinsicBounds(R.drawable.ic_baseline_sms_failed_32,0,0,0);
+            button.setOnClickListener(v->{
+                new MaterialAlertDialogBuilder(context).setTitle("Motivo del rechazo")
+                        .setBackground(AppCompatResources.getDrawable(context, R.drawable.background_silver_rounded))
+                        .setMessage(historial.getRespuesta_motivo())
+                        .setPositiveButton("Aceptar",((dialog, which) -> {}))
+                        .show();
+            });
         }
 
 

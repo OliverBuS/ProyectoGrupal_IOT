@@ -54,7 +54,7 @@ public class MainActivity extends AppCompatActivity {
                                         if (readSession != null) {
                                             Session.rol = readSession.getRol();
                                             Session.codigo = readSession.getCodigo();
-                                            if (Session.rol.equals("alumno")) {
+                                            if (Session.rol.equals("Alumno")) {
                                                 goHome();
                                             } else if (Session.rol.equals("TI")) {
                                                 goHomeTI();

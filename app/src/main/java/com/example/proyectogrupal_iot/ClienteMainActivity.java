@@ -63,6 +63,7 @@ public class ClienteMainActivity extends AppCompatActivity {
                 Intent intent = new Intent(this, MainActivity.class);
                 intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                 FirebaseAuth.getInstance().signOut();
+                ClienteSession.finish();
                 startActivity(intent);
             }
             return false;
