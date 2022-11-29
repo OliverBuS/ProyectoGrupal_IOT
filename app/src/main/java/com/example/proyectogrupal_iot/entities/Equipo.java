@@ -20,12 +20,13 @@ public class Equipo implements Serializable {
     public Equipo() {
     }
 
-    public Equipo(String dispositivo, String marca, String caracteristicas, String incluye, List<String> imagenes) {
+    public Equipo(String dispositivo, String marca, String caracteristicas, String incluye, List<String> imagenes, int stock) {
         this.dispositivo = dispositivo;
         this.marca = marca;
         this.caracteristicas = caracteristicas;
         this.incluye = incluye;
         this.imagenes = imagenes;
+        this.stock = stock;
     }
 
     public int getStock() {

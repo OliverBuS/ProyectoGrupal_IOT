@@ -18,6 +18,7 @@ public class Solicitud {
     String tipo;
     SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy", Locale.getDefault());
     String fecha;
+    String respuesta_motivo;
 
 
     public Solicitud() {
@@ -115,4 +116,13 @@ public class Solicitud {
     public void setOtros(String otros) {
         this.otros = otros;
     }
+
+    public String getRespuesta_motivo() {
+        return respuesta_motivo;
+    }
+
+    public void setRespuesta_motivo(String respuesta_motivo) {
+        this.respuesta_motivo = respuesta_motivo;
+    }
+
 }
