@@ -85,19 +85,20 @@ public class ClienteEquiposFragment extends Fragment implements RecycleviewerInt
             notCreated = false;
 
 
-
-
             reference.orderByChild("stock").startAt(1).addValueEventListener(new ValueEventListener() {
                 @Override
                 public void onDataChange(@NonNull DataSnapshot snapshot) {
                     List<Equipo> equipoList = new ArrayList<>();
                     for (DataSnapshot children : snapshot.getChildren()) {
-                        Equipo equipo = children.getValue(Equipo.class);
-                        if (equipo != null) {
+                        try {
+                            Equipo equipo = children.getValue(Equipo.class);
                             equipo.setKey(children.getKey());
                             ClienteSession.addMarca(equipo.getMarca());
+                            equipoList.add(equipo);
+
+                        } catch (Exception e) {
+
                         }
-                        equipoList.add(equipo);
                     }
                     ClienteSession.setEquipos(equipoList);
                     reloadList();
@@ -123,16 +124,16 @@ public class ClienteEquiposFragment extends Fragment implements RecycleviewerInt
         } else {
             labelMarca.setVisibility(View.GONE);
         }
-        if(ClienteSession.isDispositivoFiltred()) {
+        if (ClienteSession.isDispositivoFiltred()) {
             labelDispositivo.setVisibility(View.VISIBLE);
             textDispositivo.setText(ClienteSession.getDispositivoFiltro());
-        } else{
+        } else {
             labelDispositivo.setVisibility(View.GONE);
         }
 
-        if(!ClienteSession.isDispositivoFiltred() && !ClienteSession.isMarcaFiltred()){
+        if (!ClienteSession.isDispositivoFiltred() && !ClienteSession.isMarcaFiltred()) {
             vistafiltros.setVisibility(View.GONE);
-        } else{
+        } else {
             vistafiltros.setVisibility(View.VISIBLE);
         }
 

@@ -20,6 +20,12 @@
         </menu>
 
     </item>
+    <item
+        android:title="Cuenta"
+        android:id="@+id/user"
+        android:icon="@drawable/ic_baseline_account_circle_24"
+        app:showAsAction="ifRoom"
+        />
 
 
 </menu>

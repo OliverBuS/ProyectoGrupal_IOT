@@ -10,6 +10,7 @@ import android.util.Log;
 import android.widget.Toast;
 
 import com.example.proyectogrupal_iot.databinding.ActivityMainBinding;
+import com.example.proyectogrupal_iot.notification.MyFirebaseMessagingService;
 import com.example.proyectogrupal_iot.save.ReadSession;
 import com.example.proyectogrupal_iot.save.Session;
 import com.google.firebase.auth.FirebaseAuth;
@@ -28,7 +29,6 @@ public class MainActivity extends AppCompatActivity {
     FirebaseAuth firebaseAuth;
     FirebaseDatabase firebaseDatabase;
     DatabaseReference ref;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,7 +38,6 @@ public class MainActivity extends AppCompatActivity {
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
         setup();
-
     }
 
     private void setup() {
@@ -52,7 +51,6 @@ public class MainActivity extends AppCompatActivity {
                                     @Override
                                     public void onDataChange(@NonNull DataSnapshot snapshot) {
                                         ReadSession readSession = snapshot.getValue(ReadSession.class);
-
                                         if (readSession != null) {
                                             Session.rol = readSession.getRol();
                                             Session.codigo = readSession.getCodigo();
