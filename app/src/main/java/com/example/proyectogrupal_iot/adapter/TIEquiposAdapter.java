@@ -1,6 +1,7 @@
 package com.example.proyectogrupal_iot.adapter;
 
 import android.content.Context;
+import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -26,7 +27,6 @@ public class TIEquiposAdapter extends RecyclerView.Adapter<TIEquiposAdapter.TIEq
     private Context context;
     private final RecycleviewerInterface recycleviewerInterface;
 
-
     @Override
     public int getItemCount() {
         return equipos.size();
@@ -34,9 +34,9 @@ public class TIEquiposAdapter extends RecyclerView.Adapter<TIEquiposAdapter.TIEq
 
     @NonNull
     @Override
-    public TIEquiposAdapter.TIEquipoViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public TIEquipoViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = inflater.inflate(R.layout.recycle_equipos_lista_ti, parent, false);
-        return new TIEquiposAdapter.TIEquipoViewHolder(view);
+        return new TIEquipoViewHolder(view);
     }
 
     @Override

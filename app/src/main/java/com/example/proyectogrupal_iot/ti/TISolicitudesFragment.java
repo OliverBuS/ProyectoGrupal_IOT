@@ -55,7 +55,7 @@ public class TISolicitudesFragment extends Fragment implements RecycleviewerInte
         recyclerView = view.findViewById(R.id.recycleViewer);
         recyclerView.setHasFixedSize(true);
         Context context = super.getContext();
-        SolicitudesAdapter solicitudesAdapter = new SolicitudesAdapter(ClienteSession.getSolicitudes(), context, this);
+        TISolicitudesAdapter tisolicitudesAdapter = new TISolicitudesAdapter(TISession.getSolicitudes(), context, this);
 
         if (notCreated) {
             notCreated = false;
@@ -71,8 +71,8 @@ public class TISolicitudesFragment extends Fragment implements RecycleviewerInte
                         solicitudesList.add(solicitud);
                     }
                     ClienteSession.setSolicitudes(solicitudesList);
-                    solicitudesAdapter.setSolicitudes(ClienteSession.getSolicitudes());
-                    recyclerView.setAdapter(solicitudesAdapter);
+                    tisolicitudesAdapter.setSolicitudes(ClienteSession.getSolicitudes());
+                    recyclerView.setAdapter(tisolicitudesAdapter);
                     recyclerView.setLayoutManager(new LinearLayoutManager(context));
                 }
 
@@ -82,8 +82,8 @@ public class TISolicitudesFragment extends Fragment implements RecycleviewerInte
                 }
             });
         } else {
-            solicitudesAdapter.setSolicitudes(ClienteSession.getSolicitudes());
-            recyclerView.setAdapter(solicitudesAdapter);
+            tisolicitudesAdapter.setSolicitudes(ClienteSession.getSolicitudes());
+            recyclerView.setAdapter(tisolicitudesAdapter);
             recyclerView.setLayoutManager(new LinearLayoutManager(context));
         }
 

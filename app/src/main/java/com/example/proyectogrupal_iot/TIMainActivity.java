@@ -2,29 +2,21 @@ package com.example.proyectogrupal_iot;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.content.res.AppCompatResources;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
-import android.app.AlertDialog;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.Toast;
 
 
-import com.example.proyectogrupal_iot.ti.FormEquipoFragment;
 import com.example.proyectogrupal_iot.ti.TIEquiposFragment;
 import com.example.proyectogrupal_iot.ti.TIPerfilFragment;
 import com.example.proyectogrupal_iot.ti.TISolicitudesFragment;
 import com.example.proyectogrupal_iot.databinding.*;
-
-import java.text.Normalizer;
 
 public class TIMainActivity extends AppCompatActivity {
 
@@ -111,13 +103,13 @@ public class TIMainActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
        switch(item.getItemId()) {
             case R.id.anadirDispositivo:
-                getSupportFragmentManager().beginTransaction().replace(R.id.frame_container_TI,
-                        FormEquipoFragment.newInstance("", "")).commit();
-                break;
+                startActivity(new Intent(this, FormDispositivoActivity.class));
+                return(true);
+/*                break;
             case R.id.eliminarDispositivo:
                 getSupportFragmentManager().beginTransaction().replace(R.id.frame_container_TI,
                         FormEquipoFragment.newInstance("", "")).commit();
-                break;
+                break;*/
         }
         return super.onOptionsItemSelected(item);
     }
