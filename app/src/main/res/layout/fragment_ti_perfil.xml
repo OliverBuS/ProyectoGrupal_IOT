@@ -18,12 +18,17 @@
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
+            android:layout_marginStart="140dp"
+            android:layout_marginEnd="140dp"
             android:text="Mi perfil"
             android:textColor="@color/black"
             android:textSize="35sp"
             android:textStyle="bold"
-            tools:layout_editor_absoluteX="140dp"
-            tools:layout_editor_absoluteY="37dp" />
+            app:layout_constraintBottom_toTopOf="@+id/linearLayoutPerfil"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <LinearLayout
             android:id="@+id/linearLayoutPerfil"
@@ -31,10 +36,13 @@
             android:layout_height="205dp"
             android:background="@drawable/round_device_usuario"
             android:gravity="center_horizontal"
-            tools:layout_editor_absoluteX="83dp"
-            tools:layout_editor_absoluteY="99dp">
+            app:layout_constraintBottom_toTopOf="@+id/linearLayout4PerfilTi"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewPerfilTi">
 
-            <com.denzcoskun.imageslider.ImageSlider
+            <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/sliderPerfilTI"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -45,22 +53,32 @@
 
                 <ImageView
                     android:id="@+id/img_test"
-                    android:layout_width="300dp"
-                    android:layout_height="140dp">
+                    android:layout_width="245dp"
+                    android:layout_height="0dp"
+                    android:layout_marginStart="83dp"
+                    android:layout_marginTop="99dp"
+                    app:layout_constraintBottom_toTopOf="@+id/imageButtonPerfilTI"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
 
                 </ImageView>
 
                 <ImageButton
                     android:id="@+id/imageButtonPerfilTI"
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
-                    android:layout_marginStart="100dp"
-                    android:layout_marginTop="140dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    android:layout_marginEnd="16dp"
                     android:background="@drawable/round_imagebutton_usuario"
                     android:backgroundTint="#9CABC2"
-                    android:src="@drawable/ic_camera"></ImageButton>
+                    android:src="@drawable/ic_camera"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.927"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/img_test"
+                    tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck"></ImageButton>
 
-            </com.denzcoskun.imageslider.ImageSlider>
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
         </LinearLayout>
 
@@ -69,6 +87,7 @@
             android:id="@+id/linearLayout4PerfilTi"
             android:layout_width="410dp"
             android:layout_height="236dp"
+            tools:ignore="MissingConstraints"
             tools:layout_editor_absoluteY="398dp">
 
             <androidx.constraintlayout.widget.ConstraintLayout
@@ -86,21 +105,21 @@
                     android:textColor="@color/black"
                     android:textSize="24sp"
                     android:textStyle="bold"
-                    app:layout_constraintHorizontal_bias="0.528"
-                    app:layout_constraintLeft_toLeftOf="parent"
-                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
                     android:id="@+id/textViewPerfilCorreoTI"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="176dp"
-                    android:layout_marginTop="132dp"
+                    android:layout_width="95dp"
+                    android:layout_height="39dp"
+                    android:layout_marginTop="128dp"
                     android:text="Correo"
                     android:textColor="@color/black"
                     android:textSize="24sp"
                     android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.501"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
             </androidx.constraintlayout.widget.ConstraintLayout>
@@ -111,12 +130,13 @@
             android:id="@+id/buttonactualizarPerfTI"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginEnd="150dp"
             android:background="@drawable/background_red_rounded"
             android:text="Actualizar"
             app:backgroundTint="#E1D1D1"
             app:backgroundTintMode="multiply"
-            tools:layout_editor_absoluteX="149dp"
-            tools:layout_editor_absoluteY="650dp" />
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>
