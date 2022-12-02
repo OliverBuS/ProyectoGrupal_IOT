@@ -5,6 +5,7 @@ public class Cuenta {
     private String rol;
     private String correo;
     private String codigo;
+    private String imgurl;
 
     public Cuenta() {
     }
@@ -37,5 +38,13 @@ public class Cuenta {
 
     public void setCodigo(String codigo) {
         this.codigo = codigo;
+    }
+
+    public String getImgurl() {
+        return imgurl;
+    }
+
+    public void setImgurl(String imgurl) {
+        this.imgurl = imgurl;
     }
 }

@@ -1,14 +1,122 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".ti.TIPerfilFragment">
+    android:background="@drawable/fondo_principal"
+    android:layout_height="match_parent">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:gravity="center_horizontal"
+        tools:context=".ti.TIPerfilFragment">
 
-</FrameLayout>
+        <TextView
+            android:id="@+id/textViewPerfilTi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:text="Mi perfil"
+            android:textColor="@color/black"
+            android:textSize="35sp"
+            android:textStyle="bold"
+            tools:layout_editor_absoluteX="140dp"
+            tools:layout_editor_absoluteY="37dp" />
+
+        <LinearLayout
+            android:id="@+id/linearLayoutPerfil"
+            android:layout_width="245dp"
+            android:layout_height="205dp"
+            android:background="@drawable/round_device_usuario"
+            android:gravity="center_horizontal"
+            tools:layout_editor_absoluteX="83dp"
+            tools:layout_editor_absoluteY="99dp">
+
+            <com.denzcoskun.imageslider.ImageSlider
+                android:id="@+id/sliderPerfilTI"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                app:iss_auto_cycle="true"
+                app:iss_delay="0"
+                app:iss_period="1000">
+
+                <ImageView
+                    android:id="@+id/img_test"
+                    android:layout_width="300dp"
+                    android:layout_height="140dp">
+
+                </ImageView>
+
+                <ImageButton
+                    android:id="@+id/imageButtonPerfilTI"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_marginStart="100dp"
+                    android:layout_marginTop="140dp"
+                    android:background="@drawable/round_imagebutton_usuario"
+                    android:backgroundTint="#9CABC2"
+                    android:src="@drawable/ic_camera"></ImageButton>
+
+            </com.denzcoskun.imageslider.ImageSlider>
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/linearLayout4PerfilTi"
+            android:layout_width="410dp"
+            android:layout_height="236dp"
+            tools:layout_editor_absoluteY="398dp">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/relativeLayout2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center">
+
+                <TextView
+                    android:id="@+id/textViewCodeTI"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="76dp"
+                    android:text="Código"
+                    android:textColor="@color/black"
+                    android:textSize="24sp"
+                    android:textStyle="bold"
+                    app:layout_constraintHorizontal_bias="0.528"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/textViewPerfilCorreoTI"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="176dp"
+                    android:layout_marginTop="132dp"
+                    android:text="Correo"
+                    android:textColor="@color/black"
+                    android:textSize="24sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/buttonactualizarPerfTI"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/background_red_rounded"
+            android:text="Actualizar"
+            app:backgroundTint="#E1D1D1"
+            app:backgroundTintMode="multiply"
+            tools:layout_editor_absoluteX="149dp"
+            tools:layout_editor_absoluteY="650dp" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
