@@ -14,6 +14,7 @@
         <entry key="..\:/2022-2/1TEL05 AppsIoT/ProyectoGrupal_IOT/app/src/main/res/drawable/ic_baseline_remove_circle_outline_32.xml" value="0.1" />
         <entry key="..\:/2022-2/1TEL05 AppsIoT/ProyectoGrupal_IOT/app/src/main/res/drawable/ic_baseline_search_32.xml" value="0.1945" />
         <entry key="..\:/2022-2/1TEL05 AppsIoT/ProyectoGrupal_IOT/app/src/main/res/drawable/round_device_usuario.xml" value="0.197" />
+        <entry key="..\:/2022-2/1TEL05 AppsIoT/ProyectoGrupal_IOT/app/src/main/res/layout/activity_admin_main.xml" value="0.22" />
         <entry key="..\:/2022-2/1TEL05 AppsIoT/ProyectoGrupal_IOT/app/src/main/res/layout/activity_anadir_dispositivo.xml" value="0.22" />
         <entry key="..\:/2022-2/1TEL05 AppsIoT/ProyectoGrupal_IOT/app/src/main/res/layout/activity_check_user.xml" value="0.17074275362318841" />
         <entry key="..\:/2022-2/1TEL05 AppsIoT/ProyectoGrupal_IOT/app/src/main/res/layout/activity_cliente_equipo.xml" value="0.17074275362318841" />
@@ -41,6 +42,7 @@
         <entry key="..\:/2022-2/1TEL05 AppsIoT/ProyectoGrupal_IOT/app/src/main/res/layout/recycle_historial_vista.xml" value="0.16259057971014493" />
         <entry key="..\:/2022-2/1TEL05 AppsIoT/ProyectoGrupal_IOT/app/src/main/res/layout/recycle_solicitud_lista.xml" value="0.17074275362318841" />
         <entry key="..\:/2022-2/1TEL05 AppsIoT/ProyectoGrupal_IOT/app/src/main/res/layout/recycle_solicitud_lista_ti.xml" value="0.22" />
+        <entry key="..\:/2022-2/1TEL05 AppsIoT/ProyectoGrupal_IOT/app/src/main/res/menu/menu_admin.xml" value="0.209375" />
         <entry key="..\:/2022-2/1TEL05 AppsIoT/ProyectoGrupal_IOT/app/src/main/res/menu/menu_cliente.xml" value="0.33" />
         <entry key="..\:/2022-2/1TEL05 AppsIoT/ProyectoGrupal_IOT/app/src/main/res/menu/menu_cliente_equipos.xml" value="0.209375" />
         <entry key="..\:/2022-2/1TEL05 AppsIoT/ProyectoGrupal_IOT/app/src/main/res/menu/menu_solicitar.xml" value="0.1" />

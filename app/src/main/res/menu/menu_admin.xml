@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:title="Usuarios TI"
+        android:id="@+id/admintiusuarios"
+        android:icon="@drawable/ic_baseline_mouse_32"/>
+    <item android:title="Estadísticas"
+        android:id="@+id/adminestadisticas"
+        android:icon="@drawable/ic_baseline_checklist_32"/>
+    <item android:title="Clientes"
+        android:id="@+id/adminclientes"
+        android:icon="@drawable/ic_baseline_account_circle_32"/>
+</menu>
