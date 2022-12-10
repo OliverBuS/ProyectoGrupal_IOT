@@ -32,6 +32,7 @@
         <entry key="..\:/2022-2/1TEL05 AppsIoT/ProyectoGrupal_IOT/app/src/main/res/layout/activity_registro_codigo.xml" value="0.16259057971014493" />
         <entry key="..\:/2022-2/1TEL05 AppsIoT/ProyectoGrupal_IOT/app/src/main/res/layout/activity_registro_form.xml" value="0.16259057971014493" />
         <entry key="..\:/2022-2/1TEL05 AppsIoT/ProyectoGrupal_IOT/app/src/main/res/layout/activity_ti_main.xml" value="0.1" />
+        <entry key="..\:/2022-2/1TEL05 AppsIoT/ProyectoGrupal_IOT/app/src/main/res/layout/fragment_admin_clientes.xml" value="0.161231884057971" />
         <entry key="..\:/2022-2/1TEL05 AppsIoT/ProyectoGrupal_IOT/app/src/main/res/layout/fragment_admin_estadisticas.xml" value="0.161231884057971" />
         <entry key="..\:/2022-2/1TEL05 AppsIoT/ProyectoGrupal_IOT/app/src/main/res/layout/fragment_admin_usuarios.xml" value="0.1" />
         <entry key="..\:/2022-2/1TEL05 AppsIoT/ProyectoGrupal_IOT/app/src/main/res/layout/fragment_cliente_equipos.xml" value="0.1" />
@@ -43,6 +44,7 @@
         <entry key="..\:/2022-2/1TEL05 AppsIoT/ProyectoGrupal_IOT/app/src/main/res/layout/fragment_ti_solicitudes.xml" value="0.16259057971014493" />
         <entry key="..\:/2022-2/1TEL05 AppsIoT/ProyectoGrupal_IOT/app/src/main/res/layout/fragment_ti_solicitudes_list.xml" value="0.16259057971014493" />
         <entry key="..\:/2022-2/1TEL05 AppsIoT/ProyectoGrupal_IOT/app/src/main/res/layout/header.xml" value="0.15760869565217392" />
+        <entry key="..\:/2022-2/1TEL05 AppsIoT/ProyectoGrupal_IOT/app/src/main/res/layout/recycle_admin_clientes_lista.xml" value="0.25" />
         <entry key="..\:/2022-2/1TEL05 AppsIoT/ProyectoGrupal_IOT/app/src/main/res/layout/recycle_equipos_lista.xml" value="0.16259057971014493" />
         <entry key="..\:/2022-2/1TEL05 AppsIoT/ProyectoGrupal_IOT/app/src/main/res/layout/recycle_equipos_lista_ti.xml" value="0.16259057971014493" />
         <entry key="..\:/2022-2/1TEL05 AppsIoT/ProyectoGrupal_IOT/app/src/main/res/layout/recycle_historial_vista.xml" value="0.16259057971014493" />

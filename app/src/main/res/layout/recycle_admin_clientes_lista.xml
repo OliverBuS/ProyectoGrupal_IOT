@@ -2,9 +2,9 @@
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/cardviewPersonalTI"
+    android:id="@+id/cardviewClientes"
     android:layout_width="match_parent"
-    android:layout_height="150dp"
+    android:layout_height="200dp"
     android:animateLayoutChanges="true"
     app:cardCornerRadius="25dp"
     app:cardElevation="4dp"
@@ -23,15 +23,14 @@
             android:padding="10dp">
 
             <RelativeLayout
-                android:id="@+id/containerInfoUsuarioTI"
-                android:layout_width="265dp"
-                android:layout_height="100dp"
+                android:id="@+id/containerInfoClientes"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
                 android:layout_alignParentEnd="true"
-                android:layout_marginEnd="117dp"
-                android:background="@drawable/round_device_usuario">
+                android:background="@drawable/background_lightblue_rounded">
 
                 <LinearLayout
-                    android:id="@+id/linearLayoutUsuarioTI"
+                    android:id="@+id/linearLayoutInfoClientes"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentTop="true"
@@ -41,106 +40,90 @@
                     android:orientation="vertical">
 
                     <TextView
-                        android:id="@+id/nombreapellidoPersonal"
+                        android:id="@+id/nombreapellidoClientes"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Nombre:"
-                        android:textColor="@color/black"
-                        android:textSize="18sp" />
+                        android:text="Nombre y apellido"
+                        android:textColor="@color/seed"
+                        android:textSize="28sp"
+                        android:textStyle="bold" />
 
                     <TextView
-                        android:id="@+id/correoPersonal"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="6dp"
-                        android:text="Correo:"
-                        android:textColor="@color/black"
-                        android:textSize="18sp" />
-
-                    <TextView
-                        android:id="@+id/contrasenaPersonal"
+                        android:id="@+id/correoClientes"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="7dp"
-                        android:text="Contraseña:"
-                        android:textColor="@color/black"
+                        android:text="correo@pucp.com.pe"
+                        android:textColor="@color/seed"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/rolClientes"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="7dp"
+                        android:text="Rol"
+                        android:textColor="@color/seed"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="7dp"
+                        android:layout_marginEnd="-20dp"
+                        android:text="Cantidad de préstamos:"
+                        android:textColor="@color/seed"
                         android:textSize="18sp" />
 
                 </LinearLayout>
 
                 <LinearLayout
-                    android:id="@+id/infoLayoutUsuarioTI"
+                    android:id="@+id/infoLayoutListaClientes"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentTop="true"
                     android:layout_marginStart="2dp"
                     android:layout_marginLeft="1dp"
                     android:layout_marginTop="5dp"
-                    android:layout_toEndOf="@+id/linearLayoutUsuarioTI"
-                    android:layout_toRightOf="@+id/linearLayoutUsuarioTI"
+                    android:layout_toEndOf="@+id/linearLayoutInfoClientes"
+                    android:layout_toRightOf="@+id/linearLayoutInfoClientes"
                     android:orientation="vertical">
 
                     <TextView
-                        android:id="@+id/nombreUsuarioTI"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="6dp"
                         android:text=""
-                        android:textColor="@color/black"
-                        android:textSize="18sp" />
+                        android:textColor="@color/seed"
+                        android:textSize="28sp" />
 
                     <TextView
-                        android:id="@+id/correoUsuarioTI"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="7dp"
                         android:text=""
-                        android:textColor="@color/black"
-                        android:textSize="12sp" />
+                        android:textColor="@color/seed"
+                        android:textSize="18sp" />
 
                     <TextView
-                        android:id="@+id/contrasenaUsuarioTI"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="18.5dp"
+                        android:layout_marginTop="7dp"
                         android:text=""
-                        android:textColor="@color/black"
-                        android:textSize="8sp" />
+                        android:textColor="@color/seed"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/cantidadPrestamosClientes"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="X"
+                        android:textColor="@color/seed"
+                        android:textSize="18sp" />
 
                 </LinearLayout>
 
-
             </RelativeLayout>
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_alignTop="@+id/containerInfoUsuarioTI"
-                android:layout_alignEnd="@+id/containerInfoUsuarioTI"
-                android:layout_alignBottom="@+id/containerInfoUsuarioTI"
-                android:layout_marginTop="-1dp"
-                android:layout_marginEnd="-120dp"
-                android:layout_marginBottom="1dp"
-                android:gravity="center"
-                android:orientation="horizontal">
-
-                <ImageButton
-                    android:id="@+id/editarUsuarioTi"
-                    android:layout_width="50dp"
-                    android:layout_height="60dp"
-                    android:backgroundTint="@color/blue"
-                    android:foreground="@drawable/ic_baseline_edit_24"
-                    tools:ignore="SpeakableTextPresentCheck"></ImageButton>
-
-                <ImageButton
-                    android:id="@+id/eliminarUsuarioTI"
-                    android:layout_width="50dp"
-                    android:layout_height="60dp"
-                    android:backgroundTint="#FF0909"
-                    android:foreground="@drawable/ic_baseline_delete_24"
-                    tools:ignore="SpeakableTextPresentCheck"></ImageButton>
-            </LinearLayout>
-
         </RelativeLayout>
     </LinearLayout>
 
