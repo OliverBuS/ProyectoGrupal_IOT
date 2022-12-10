@@ -16,6 +16,9 @@
         android:theme="@style/Theme.ProyectoGrupal_IOT"
         tools:targetApi="31">
         <activity
+            android:name=".AdminAnadirUsuarioTIActivity"
+            android:exported="false" />
+        <activity
             android:name=".AdminMainActivity"
             android:exported="false" />
         <activity

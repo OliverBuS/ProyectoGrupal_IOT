@@ -10,12 +10,14 @@
         <entry key="..\:/2022-2/1TEL05 AppsIoT/ProyectoGrupal_IOT/app/src/main/res/drawable/background_green_rounded.xml" value="0.199" />
         <entry key="..\:/2022-2/1TEL05 AppsIoT/ProyectoGrupal_IOT/app/src/main/res/drawable/cliente_item_nav.xml" value="0.2165" />
         <entry key="..\:/2022-2/1TEL05 AppsIoT/ProyectoGrupal_IOT/app/src/main/res/drawable/ic_baseline_account_circle_32.xml" value="0.1" />
+        <entry key="..\:/2022-2/1TEL05 AppsIoT/ProyectoGrupal_IOT/app/src/main/res/drawable/ic_baseline_delete_24.xml" value="0.199" />
         <entry key="..\:/2022-2/1TEL05 AppsIoT/ProyectoGrupal_IOT/app/src/main/res/drawable/ic_baseline_format_list_bulleted_32.xml" value="0.2165" />
         <entry key="..\:/2022-2/1TEL05 AppsIoT/ProyectoGrupal_IOT/app/src/main/res/drawable/ic_baseline_mail_lock_24.xml" value="0.2165" />
         <entry key="..\:/2022-2/1TEL05 AppsIoT/ProyectoGrupal_IOT/app/src/main/res/drawable/ic_baseline_profile_32.xml" value="0.1945" />
         <entry key="..\:/2022-2/1TEL05 AppsIoT/ProyectoGrupal_IOT/app/src/main/res/drawable/ic_baseline_remove_circle_outline_32.xml" value="0.1" />
         <entry key="..\:/2022-2/1TEL05 AppsIoT/ProyectoGrupal_IOT/app/src/main/res/drawable/ic_baseline_search_32.xml" value="0.1945" />
         <entry key="..\:/2022-2/1TEL05 AppsIoT/ProyectoGrupal_IOT/app/src/main/res/drawable/round_device_usuario.xml" value="0.197" />
+        <entry key="..\:/2022-2/1TEL05 AppsIoT/ProyectoGrupal_IOT/app/src/main/res/layout/activity_admin_anadir_usuario_ti.xml" value="0.161231884057971" />
         <entry key="..\:/2022-2/1TEL05 AppsIoT/ProyectoGrupal_IOT/app/src/main/res/layout/activity_admin_main.xml" value="0.22" />
         <entry key="..\:/2022-2/1TEL05 AppsIoT/ProyectoGrupal_IOT/app/src/main/res/layout/activity_anadir_dispositivo.xml" value="0.22" />
         <entry key="..\:/2022-2/1TEL05 AppsIoT/ProyectoGrupal_IOT/app/src/main/res/layout/activity_check_user.xml" value="0.17074275362318841" />
@@ -30,7 +32,7 @@
         <entry key="..\:/2022-2/1TEL05 AppsIoT/ProyectoGrupal_IOT/app/src/main/res/layout/activity_registro_codigo.xml" value="0.16259057971014493" />
         <entry key="..\:/2022-2/1TEL05 AppsIoT/ProyectoGrupal_IOT/app/src/main/res/layout/activity_registro_form.xml" value="0.16259057971014493" />
         <entry key="..\:/2022-2/1TEL05 AppsIoT/ProyectoGrupal_IOT/app/src/main/res/layout/activity_ti_main.xml" value="0.1" />
-        <entry key="..\:/2022-2/1TEL05 AppsIoT/ProyectoGrupal_IOT/app/src/main/res/layout/fragment_admin_usuarios.xml" value="0.25" />
+        <entry key="..\:/2022-2/1TEL05 AppsIoT/ProyectoGrupal_IOT/app/src/main/res/layout/fragment_admin_usuarios.xml" value="0.1" />
         <entry key="..\:/2022-2/1TEL05 AppsIoT/ProyectoGrupal_IOT/app/src/main/res/layout/fragment_cliente_equipos.xml" value="0.17074275362318841" />
         <entry key="..\:/2022-2/1TEL05 AppsIoT/ProyectoGrupal_IOT/app/src/main/res/layout/fragment_cliente_historial.xml" value="0.17074275362318841" />
         <entry key="..\:/2022-2/1TEL05 AppsIoT/ProyectoGrupal_IOT/app/src/main/res/layout/fragment_cliente_solicitudes.xml" value="0.17074275362318841" />
@@ -45,6 +47,7 @@
         <entry key="..\:/2022-2/1TEL05 AppsIoT/ProyectoGrupal_IOT/app/src/main/res/layout/recycle_historial_vista.xml" value="0.16259057971014493" />
         <entry key="..\:/2022-2/1TEL05 AppsIoT/ProyectoGrupal_IOT/app/src/main/res/layout/recycle_solicitud_lista.xml" value="0.17074275362318841" />
         <entry key="..\:/2022-2/1TEL05 AppsIoT/ProyectoGrupal_IOT/app/src/main/res/layout/recycle_solicitud_lista_ti.xml" value="0.22" />
+        <entry key="..\:/2022-2/1TEL05 AppsIoT/ProyectoGrupal_IOT/app/src/main/res/layout/recycle_usuariosti_lista.xml" value="0.2" />
         <entry key="..\:/2022-2/1TEL05 AppsIoT/ProyectoGrupal_IOT/app/src/main/res/menu/menu_admin.xml" value="0.209375" />
         <entry key="..\:/2022-2/1TEL05 AppsIoT/ProyectoGrupal_IOT/app/src/main/res/menu/menu_cliente.xml" value="0.33" />
         <entry key="..\:/2022-2/1TEL05 AppsIoT/ProyectoGrupal_IOT/app/src/main/res/menu/menu_cliente_equipos.xml" value="0.209375" />
