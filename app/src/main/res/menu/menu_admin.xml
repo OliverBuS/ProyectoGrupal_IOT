@@ -2,7 +2,7 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item android:title="Usuarios TI"
         android:id="@+id/admintiusuarios"
-        android:icon="@drawable/ic_baseline_mouse_32"/>
+        android:icon="@drawable/ic_baseline_monitor_32"/>
     <item android:title="Estadísticas"
         android:id="@+id/adminestadisticas"
         android:icon="@drawable/ic_baseline_checklist_32"/>
