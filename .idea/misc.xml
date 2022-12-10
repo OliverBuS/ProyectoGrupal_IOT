@@ -6,6 +6,8 @@
         <entry key="..\:/2022-2/1TEL05 AppsIoT/ProyectoGrupal_IOT/app/src/debug/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.2165" />
         <entry key="..\:/2022-2/1TEL05 AppsIoT/ProyectoGrupal_IOT/app/src/main/res/drawable/back_arrow.xml" value="0.2165" />
         <entry key="..\:/2022-2/1TEL05 AppsIoT/ProyectoGrupal_IOT/app/src/main/res/drawable/background_blue_toprounded.xml" value="0.2165" />
+        <entry key="..\:/2022-2/1TEL05 AppsIoT/ProyectoGrupal_IOT/app/src/main/res/drawable/background_gray_rounded.xml" value="0.199" />
+        <entry key="..\:/2022-2/1TEL05 AppsIoT/ProyectoGrupal_IOT/app/src/main/res/drawable/background_green_rounded.xml" value="0.199" />
         <entry key="..\:/2022-2/1TEL05 AppsIoT/ProyectoGrupal_IOT/app/src/main/res/drawable/cliente_item_nav.xml" value="0.2165" />
         <entry key="..\:/2022-2/1TEL05 AppsIoT/ProyectoGrupal_IOT/app/src/main/res/drawable/ic_baseline_account_circle_32.xml" value="0.1" />
         <entry key="..\:/2022-2/1TEL05 AppsIoT/ProyectoGrupal_IOT/app/src/main/res/drawable/ic_baseline_format_list_bulleted_32.xml" value="0.2165" />
@@ -28,6 +30,7 @@
         <entry key="..\:/2022-2/1TEL05 AppsIoT/ProyectoGrupal_IOT/app/src/main/res/layout/activity_registro_codigo.xml" value="0.16259057971014493" />
         <entry key="..\:/2022-2/1TEL05 AppsIoT/ProyectoGrupal_IOT/app/src/main/res/layout/activity_registro_form.xml" value="0.16259057971014493" />
         <entry key="..\:/2022-2/1TEL05 AppsIoT/ProyectoGrupal_IOT/app/src/main/res/layout/activity_ti_main.xml" value="0.1" />
+        <entry key="..\:/2022-2/1TEL05 AppsIoT/ProyectoGrupal_IOT/app/src/main/res/layout/fragment_admin_usuarios.xml" value="0.25" />
         <entry key="..\:/2022-2/1TEL05 AppsIoT/ProyectoGrupal_IOT/app/src/main/res/layout/fragment_cliente_equipos.xml" value="0.17074275362318841" />
         <entry key="..\:/2022-2/1TEL05 AppsIoT/ProyectoGrupal_IOT/app/src/main/res/layout/fragment_cliente_historial.xml" value="0.17074275362318841" />
         <entry key="..\:/2022-2/1TEL05 AppsIoT/ProyectoGrupal_IOT/app/src/main/res/layout/fragment_cliente_solicitudes.xml" value="0.17074275362318841" />
