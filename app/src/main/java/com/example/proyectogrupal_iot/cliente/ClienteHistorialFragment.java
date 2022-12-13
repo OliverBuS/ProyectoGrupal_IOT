@@ -1,6 +1,7 @@
 package com.example.proyectogrupal_iot.cliente;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -13,6 +14,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
+import com.example.proyectogrupal_iot.ClienteHistorialActivity;
 import com.example.proyectogrupal_iot.R;
 import com.example.proyectogrupal_iot.adapter.HistorialAdapter;
 import com.example.proyectogrupal_iot.adapter.SolicitudesAdapter;
@@ -95,6 +97,13 @@ public class ClienteHistorialFragment extends Fragment implements RecycleviewerI
 
     @Override
     public void onItemClick(int position) {
-        Toast.makeText(this.getContext(), "A desarrollar", Toast.LENGTH_SHORT).show();
+        Historial hist =ClienteSession.getHistorialLista().get(position);
+        if(hist.getEstado().equals("rechazado")){
+            return;
+        }
+
+        Intent intent = new Intent(getContext(), ClienteHistorialActivity.class);
+        intent.putExtra("historial",hist);
+        startActivity(intent);
     }
 }

@@ -77,12 +77,16 @@ public class ClienteMainActivity extends AppCompatActivity {
         switch (navValue) {
             case 0:
                 replaceFragment(equiposFragment);
+                binding.bottomNav.setSelectedItemId(R.id.equipos);
                 break;
             case 1:
                 replaceFragment(solicitudesFragment);
+                binding.bottomNav.setSelectedItemId(R.id.solicitudes);
                 break;
             case 2:
                 replaceFragment(historialFragment);
+                binding.bottomNav.setSelectedItemId(R.id.historial);
+
                 break;
 
         }

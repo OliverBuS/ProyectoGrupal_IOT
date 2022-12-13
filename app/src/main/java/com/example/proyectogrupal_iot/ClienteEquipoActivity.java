@@ -77,6 +77,7 @@ public class ClienteEquipoActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         if(item.getItemId() == R.id.solicitar){
             Intent intent = new Intent(this,ClienteFormSolicitudActivity.class);
+            intent.putExtra("equipo",equipo);
             startActivity(intent);
             return true;
         }

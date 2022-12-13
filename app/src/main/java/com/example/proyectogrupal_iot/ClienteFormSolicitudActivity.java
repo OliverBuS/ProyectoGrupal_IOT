@@ -16,8 +16,16 @@ import android.widget.CompoundButton;
 import android.widget.Toast;
 
 import com.example.proyectogrupal_iot.databinding.ActivityClienteFormSolicitudBinding;
+import com.example.proyectogrupal_iot.entities.Equipo;
 import com.example.proyectogrupal_iot.entities.Solicitud;
+import com.example.proyectogrupal_iot.save.ClienteSession;
 import com.google.android.material.slider.Slider;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
 
 import java.io.IOException;
 
@@ -26,11 +34,19 @@ public class ClienteFormSolicitudActivity extends AppCompatActivity {
 
     ActivityClienteFormSolicitudBinding binding;
     Uri imageUri;
-
+    DatabaseReference ref;
+    StorageReference refStor;
+    FirebaseUser user;
+    Equipo equipo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        ref = FirebaseDatabase.getInstance().getReference();
+        refStor = FirebaseStorage.getInstance().getReference();
+        user= FirebaseAuth.getInstance().getCurrentUser();
+        equipo = (Equipo) getIntent().getSerializableExtra("equipo");
+
         binding = ActivityClienteFormSolicitudBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
         setSwitchotros();
@@ -145,10 +161,24 @@ public class ClienteFormSolicitudActivity extends AppCompatActivity {
         }
 
         Solicitud solicitud = new Solicitud(motivo,curso,tiempo,programas);
+        solicitud.setTipo(equipo.getDispositivo());
+        solicitud.setImagen(equipo.getImagenPrincipal());
         if(swOtros){
             solicitud.setOtros(otros);
         }
-        Toast.makeText(this, "Se Envía", Toast.LENGTH_SHORT).show();
+        //Toast.makeText(this, "Se Envía", Toast.LENGTH_SHORT).show();
+
+        String key = ref.child("solicitudes/"+user.getUid()).push().getKey();
+
+        if(!key.isEmpty()){
+            solicitud.setDni("dni/"+key+"/img.jpg");
+            refStor.child(solicitud.getDni()).putFile(imageUri).addOnSuccessListener(snapshot->{
+                ref.child("solicitudes/"+user.getUid()+"/"+key).setValue(solicitud).addOnSuccessListener(it->{
+                    Toast.makeText(this, "Se ha enviado tu solicitud", Toast.LENGTH_SHORT).show();
+                    finish();
+                });
+            });
+        }
 
     }
 

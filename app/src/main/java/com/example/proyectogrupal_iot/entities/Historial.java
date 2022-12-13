@@ -1,9 +1,15 @@
 package com.example.proyectogrupal_iot.entities;
 
-public class Historial extends Solicitud{
+import java.io.Serializable;
+
+public class Historial extends Solicitud implements Serializable {
     private String fecha_respuesta;
     private String estado;
     private String respuesta_motivo;
+    private Double lat;
+    private Double lon;
+
+
 
     public Historial() {
     }
@@ -30,5 +36,21 @@ public class Historial extends Solicitud{
 
     public void setRespuesta_motivo(String respuesta_motivo) {
         this.respuesta_motivo = respuesta_motivo;
+    }
+
+    public Double getLat() {
+        return lat;
+    }
+
+    public void setLat(Double lat) {
+        this.lat = lat;
+    }
+
+    public Double getLon() {
+        return lon;
+    }
+
+    public void setLon(Double lon) {
+        this.lon = lon;
     }
 }
